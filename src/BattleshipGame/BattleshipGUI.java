@@ -367,6 +367,7 @@ public class BattleshipGUI extends JFrame {
             case 1:
                 buttonName.setForeground(Color.RED);
                 buttonName.setBackground(Color.RED);
+                totalShipLength--;
                 break;
             //the player's guess is empty water
             case 0:
