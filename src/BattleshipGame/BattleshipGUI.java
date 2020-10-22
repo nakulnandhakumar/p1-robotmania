@@ -105,7 +105,9 @@ public class BattleshipGUI extends JFrame {
     //Arraylist that stores ship information
     public ArrayList<Ship> shipList = new ArrayList<Ship>();
 
+    public  BattleshipGUI() {
 
+    }
     //Main constructor
     public BattleshipGUI(int boardWidth, int boardLength, int shipNumber) {
         this.boardWidth = boardWidth;
@@ -348,6 +350,10 @@ public class BattleshipGUI extends JFrame {
 
     }
 
+    public void shipOverlapAdjust(){
+        totalShipLength--;
+    }
+
 
     public void game(String string, JButton buttonName) { //main active game method for attacking
 
@@ -519,7 +525,7 @@ class Board {
     }
 
     public void setAIShips(ArrayList<Ship> shipList) { //method for setting enemy ships
-
+        BattleshipGUI battleship = new BattleshipGUI();
         int randomY;
         int randomX;
 
@@ -534,10 +540,10 @@ class Board {
                     System.out.println(randomX);
 
                     for (int j = 0; j < i.length; j++) {  //prints enemy ships on board vertically
+                        if (board.get(randomY+j).get(randomX) == 1) {
+                            battleship.shipOverlapAdjust();
+                        }
                         board.get(randomY+j).set(randomX,1);
-            /*if (board.get(randomY).get(randomX+j) == 1) {
-              ship.shipOverlapAdjust();
-            }*/
                     }
                     break;
 
@@ -550,9 +556,9 @@ class Board {
                     System.out.println(randomX);
 
                     for (int j = 0; j < i.length; j++) {   //prints enemy ships horizontally
-            /*if (board.get(randomY).get(randomX+j) == 1) {
-              ship.shipOverlapAdjust();
-            }*/
+                        if (board.get(randomY).get(randomX+j) == 1) {
+                            battleship.shipOverlapAdjust();
+                        }
                         board.get(randomY).set(randomX+j,1);
                     }
                     break;
