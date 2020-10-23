@@ -106,8 +106,9 @@ public class BattleshipGUI extends JFrame {
     public ArrayList<Ship> shipList = new ArrayList<Ship>();
 
     public  BattleshipGUI() {
-
+        //default constructor
     }
+
     //Main constructor
     public BattleshipGUI(int boardWidth, int boardLength, int shipNumber) {
         this.boardWidth = boardWidth;
@@ -144,7 +145,8 @@ public class BattleshipGUI extends JFrame {
         for (Ship ship: this.shipList) {  //for loop that totals up enemy ship length to be later used
             this.totalShipLength = this.totalShipLength + ship.length;
         }
-        button11.addActionListener(e -> {
+
+        button11.addActionListener(e -> {           //here starts all the 64 button definitions and activation methods
             game(button11.getText(), button11);
         });
         button12.addActionListener(e -> {
@@ -342,15 +344,15 @@ public class BattleshipGUI extends JFrame {
         BattleshipGUI battleShip = new BattleshipGUI(8 ,8, 3);     //creates object of class battleship to run game and call game methods
         battleShip.board.setAIShips(battleShip.shipList);
 
-        JFrame frame = new JFrame("BattleshipGUI");
+        JFrame frame = new JFrame("BattleshipGUI");     // instantiates frame object and uses it activate GUI
         frame.setContentPane(battleShip.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setVisible(true);
+        frame.setVisible(true); // actually makes the view pop up on a window
 
     }
 
-    public void shipOverlapAdjust(){
+    public void shipOverlapAdjust() {   //method to reduce totalShipLength in case of ship overlapping
         totalShipLength--;
     }
 
