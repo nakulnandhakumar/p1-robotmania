@@ -15,6 +15,18 @@ Nakul Nandhakumar and Vihan Jayaraman:
 
 -- Experimented with instantiating GUI after extending GUI class file in other classes
 
+TO-DO
+
+-- Aesthetical improvements to GUI for user satisfaction
+
+-- Adapt control code to better handle ship overlaps and conditions
+
+-- improvements to technical ease of user interaction needed (ex. button pressing, more intuitive button placement/text/names etc.)
+
+-- Potenitally start UI for monopoly/tick-tack-toe/hangman games??? 
+
+-- Work on adding a playerBoard for enemy to guess and attack player ships
+
 Sara Beniwal:
 
 -- Worked on Connect Four GUI using SwingDesigner
@@ -29,16 +41,3 @@ Sara Beniwal:
     
     -- Check for win and player turn algorithms should stay the same
 
-
-
-TO-DO
-
--- Aesthetical improvements to GUI for user satisfaction
-
--- Adapt control code to better handle ship overlaps and conditions
-
--- improvements to technical ease of user interaction needed (ex. button pressing, more intuitive button placement/text/names etc.)
-
--- Potenitally start UI for monopoly/tick-tack-toe/hangman games??? 
-
--- Work on adding a playerBoard for enemy to guess and attack player ships
