@@ -41,3 +41,13 @@ Sara Beniwal:
 
 -- Check for win and player turn algorithms should stay the same
 
+TO-DO
+
+-- Improve and finalize look of Connect Four Gameboard
+
+-- Add clear instructions for user experience
+
+-- Finalize code with comments to explain each part
+
+-- Potentially start new UI project w fellow teammates
+
