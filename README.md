@@ -1,6 +1,6 @@
 # Calculator Version 2 MVC Separation Ideas
 
--- Seaprate control, view, and model code into separate classes (CalculatorGUI, CalculatorTextUI, CalculatorControl, CalculatorModel)
+-- Separate control, view, and model code into separate classes (CalculatorGUI, CalculatorTextUI, CalculatorControl, CalculatorModel)
 
 -- Extend the view code class in the control code, create object of view class, instantiate view using object
 
@@ -16,7 +16,7 @@
 
   *... control code*
 
-  *}*
+   *}*
   
 *}* 
 
@@ -46,3 +46,5 @@ TO-DO
 -- improvements to technical ease of user interaction needed (ex. button pressing, more intuitive button placement/text/names etc.)
 
 -- Potenitally start UI for monopoly/tick-tack-toe/hangman games??? 
+
+-- Work on adding a playerBoard for enemy to guess and attack player ships
