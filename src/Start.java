@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Start {
+class Start extends RoboPrint {
 
     public static void main(String[] args) {
         // User inh
@@ -47,7 +47,7 @@ class Start {
                 guesses += guess;
 
                 if (-1 != word.indexOf(guess)){
-                    wordInProgress = word.replaceAll("[^" + guesses + "]" , "_");
+                    wordInProgress = word.replaceAll("-" + guesses + "-" , "_");
                 }
                 else{
                     nUsedAttempts++;
