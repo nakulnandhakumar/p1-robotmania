@@ -447,7 +447,7 @@ class Ship {
 }
 
 
-class Board {
+class Board extends BattleshipGUI{
 
     //Battleship ship;
     public int boardWidth;
@@ -525,7 +525,6 @@ class Board {
     }
 
     public void setAIShips(ArrayList<Ship> shipList) { //method for setting enemy ships
-        BattleshipGUI battleship = new BattleshipGUI();
         int randomY;
         int randomX;
 
@@ -541,7 +540,7 @@ class Board {
 
                     for (int j = 0; j < i.length; j++) {  //prints enemy ships on board vertically
                         if (board.get(randomY+j).get(randomX) == 1) {
-                            battleship.shipOverlapAdjust();
+                            shipOverlapAdjust();
                         }
                         board.get(randomY+j).set(randomX,1);
                     }
@@ -557,7 +556,7 @@ class Board {
 
                     for (int j = 0; j < i.length; j++) {   //prints enemy ships horizontally
                         if (board.get(randomY).get(randomX+j) == 1) {
-                            battleship.shipOverlapAdjust();
+                            shipOverlapAdjust();
                         }
                         board.get(randomY).set(randomX+j,1);
                     }
