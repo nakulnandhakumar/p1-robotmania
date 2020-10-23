@@ -31,13 +31,13 @@ Sara Beniwal:
 
 -- Worked on Connect Four GUI using SwingDesigner
 
-    -- Planned out the GUI's appearance: 7 columns, 6 rows; color scheme; buttons to indicate drop
+-- Planned out the GUI's appearance: 7 columns, 6 rows; color scheme; buttons to indicate drop
     
 -- In the process of revising repl.it code to function with GUI
 
-    -- No longer an array; needs to be removed and connected to new GUI gameboard
-    
-    -- User no longer required to input which column to drop; instead must press button corresponding to column
-    
-    -- Check for win and player turn algorithms should stay the same
+-- No longer an array; needs to be removed and connected to new GUI gameboard
+
+-- User no longer required to input which column to drop; instead must press button corresponding to column
+
+-- Check for win and player turn algorithms should stay the same
 
