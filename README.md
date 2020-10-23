@@ -4,6 +4,8 @@
 
 -- Extend the view code class in the control code, create object of view class, instantiate view using object
 
+-- Possibly will be using multiple interfaces for modeling and to work around not being able to do multiple class inheritance in Java
+
 *class CalculatorControl {*
 
 *CalculatorGUI viewGUI = new CalculatorGUI();*
