@@ -26,6 +26,7 @@
 -- Potenitally start UI for monopoly/tick-tack-toe/hangman games??? 
 
 -- Work on adding a playerBoard for enemy to guess and attack player ships
+<br/><br/>
 
 **Sara Beniwal:**
 
@@ -50,6 +51,7 @@
 -- Finalize code with comments to explain each part
 
 -- Potentially start new UI project w fellow teammates
+<br/><br/>
 
 **Sanvi Pal:**
 
@@ -68,6 +70,7 @@
 -- Make progress on Calculator 2.0
 
 -- Plan Monopoly
+<br/><br/>
 
 **Yasaswi Singamneni:**
  
@@ -82,3 +85,4 @@
  -- Push code for HelloGame GUI version after fixing some bugs
  
  -- Finish Memory Game GUI
+ <br/><br/>
