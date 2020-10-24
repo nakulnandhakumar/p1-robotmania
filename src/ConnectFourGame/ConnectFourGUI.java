@@ -1,4 +1,4 @@
-// Created by Sara Beniwal
+package ConnectFourGame;// Created by Sara Beniwal
 
 import javax.swing.*;
 

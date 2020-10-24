@@ -1,9 +1,9 @@
-
+package HangbotGame;
 // Created by Sanvi Pal
 
 import java.util.Scanner;
 
-class Start extends RoboPrint {
+class HangbotStart extends HangbotPrint {
 
     public static void main(String[] args) {
         // User inh
@@ -11,7 +11,7 @@ class Start extends RoboPrint {
         Scanner kboard = new Scanner(System.in);
 
         // RoboPrint
-        RoboPrint hangman = new RoboPrint();
+        HangbotPrint hangman = new HangbotPrint();
 
 
         // Word List

@@ -1,9 +1,9 @@
-// Created by Sanvi Pal
+package HangbotGame;// Created by Sanvi Pal
 
 import javax.swing.*;
 import java.awt.*;
 
-public class RoboUI extends JPanel{
+public class HangbotGUI extends JPanel{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         int w = getWidth();
