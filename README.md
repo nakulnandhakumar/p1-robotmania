@@ -3,7 +3,7 @@
 
 # Week 1
 
-Nakul Nandhakumar and Vihan Jayaraman:
+**Nakul Nandhakumar and Vihan Jayaraman:**
 
 -- Worked on Battleship GUI using SwingDesigner
 
