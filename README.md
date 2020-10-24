@@ -51,3 +51,21 @@ TO-DO
 
 -- Potentially start new UI project w fellow teammates
 
+Sanvi Pal:
+
+-- Created algo to run hangman with GUI: Will expand size of white rectangle on top of the robot for every wrong answer in order to create illusion of disappearing robot
+
+-- Work on familiarizing myself with java syntax related to GUI
+
+-- Embedded external asset (image) to GUI of game
+
+-- Created calculator with 12 buttons
+
+TO-DO:
+
+-- Finish Hangman GUI Version Code
+
+-- Make progress on Calculator 2.0
+
+-- Plan Monopoly
+
