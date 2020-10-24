@@ -15,7 +15,7 @@
 
 -- Experimented with instantiating GUI after extending GUI class file in other classes
 
-TO-DO
+**TO-DO**
 
 -- Aesthetical improvements to GUI for user satisfaction
 
@@ -27,7 +27,7 @@ TO-DO
 
 -- Work on adding a playerBoard for enemy to guess and attack player ships
 
-Sara Beniwal:
+**Sara Beniwal:**
 
 -- Worked on Connect Four GUI using SwingDesigner
 
@@ -41,7 +41,7 @@ Sara Beniwal:
 
 -- Check for win and player turn algorithms should stay the same
 
-TO-DO
+**TO-DO**
 
 -- Improve and finalize look of Connect Four Gameboard
 
@@ -51,7 +51,7 @@ TO-DO
 
 -- Potentially start new UI project w fellow teammates
 
-Sanvi Pal:
+**Sanvi Pal:**
 
 -- Created algo to run hangman with GUI: Will expand size of white rectangle on top of the robot for every wrong answer in order to create illusion of disappearing robot
 
@@ -61,7 +61,7 @@ Sanvi Pal:
 
 -- Created calculator with 12 buttons
 
-TO-DO:
+**TO-DO:**
 
 -- Finish Hangman GUI Version Code
 
@@ -69,7 +69,7 @@ TO-DO:
 
 -- Plan Monopoly
 
- Yasaswi Singamneni:
+**Yasaswi Singamneni:**
  
  -- Started working on GUI version of HelloGame
  
@@ -77,7 +77,7 @@ TO-DO:
  
  -- Used Git to upload previous code to repo
  
- TO-DO
+ **TO-DO**
  
  -- Push code for HelloGame GUI version after fixing some bugs
  
