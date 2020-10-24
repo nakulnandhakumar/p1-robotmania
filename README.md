@@ -69,3 +69,16 @@ TO-DO:
 
 -- Plan Monopoly
 
+ Yasaswi Singamneni:
+ 
+ -- Started working on GUI version of HelloGame
+ 
+ -- Started making new memory game GUI
+ 
+ -- Used Git to upload previous code to repo
+ 
+ TO-DO
+ 
+ -- Push code for HelloGame GUI version after fixing some bugs
+ 
+ -- Finish Memory Game GUI
