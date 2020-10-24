@@ -3,7 +3,9 @@
 
 # Week 1
 
-**Nakul Nandhakumar and Vihan Jayaraman:**
+**Nakul Nandhakumar and Vihan Jayaraman: Self-Grade 5/5** 
+
+I think that Vihan and I deserve a 5/5 as we have worked on the Battleship code throughout the week. I created and added the GUI for the Battleship, adpated the control code to fit the GUI, and improved some of the GUI aesthetics (which still need more work). Vihan copied over all the Battleship code and worked on improving certain aspects of the gameplay, like adjusting win condition variables in case of ship overlaps. Originally, Vihan couldn't get Github to work so I added the code which Vihan told me to add so it might look like Vihan didn't contribute to the code but in reality he did.
 
 -- Worked on Battleship GUI using SwingDesigner
 
@@ -28,7 +30,7 @@
 -- Work on adding a playerBoard for enemy to guess and attack player ships
 <br/><br/>
 
-**Sara Beniwal:**
+**Sara Beniwal: Self-Grade 5/5**
 
 -- Worked on Connect Four GUI using SwingDesigner
 
@@ -53,7 +55,9 @@
 -- Potentially start new UI project w fellow teammates
 <br/><br/>
 
-**Sanvi Pal:**
+**Sanvi Pal: Self-Grade 4/5**
+
+I think that I should get a 4/5 because I worked on the Hangman GUI and ceated the corresponding algorithm that goes along with it. I think that should lose one point though because I procrastinated and didn't make the syntax for the hangman global and only made it local.
 
 -- Created algo to run hangman with GUI: Will expand size of white rectangle on top of the robot for every wrong answer in order to create illusion of disappearing robot
 
@@ -72,7 +76,9 @@
 -- Plan Monopoly
 <br/><br/>
 
-**Yasaswi Singamneni:**
+**Yasaswi Singamneni: Self-Grade 5/5**
+ 
+ I think that I deserve a 5/5 because I worked in the HelloGame GUI and adapted the control code to match thr GUI.
  
  -- Started working on GUI version of HelloGame
  
