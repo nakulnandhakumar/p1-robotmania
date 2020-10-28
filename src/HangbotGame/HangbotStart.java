@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 class HangbotStart extends HangbotPrint {
 
+    public HangbotStart(){
+
+    }
+
     public static void main(String[] args) {
         // User inh
         // put
