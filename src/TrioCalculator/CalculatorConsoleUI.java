@@ -1,11 +1,11 @@
 package TrioCalculator;
 import java.util.*;
 
-public class CalculatorConsoleUI extends CalculatorControl {
+public class CalculatorConsoleUI extends CalculatorContrl {
 
     private Scanner Input = new Scanner(System.in);
     private int opInput;
-
+    private double calcAnswer;
 
     public CalculatorConsoleUI(){
 
@@ -33,72 +33,72 @@ public class CalculatorConsoleUI extends CalculatorControl {
 
         if (opInput == 1) {
             TwoVars();
-            saveValueOfMathOp(Math.OPERATOR.PLUS);
-            calculateAnswer();
+            model.setMathOp(Math.OPERATOR.PLUS);
+            calcAnswer = model.calculate();
             printAnswer();
             setUp();
         }
 
         if (opInput == 2) {
             TwoVars();
-            saveValueOfMathOp(Math.OPERATOR.MINUS);
-            calculateAnswer();
+            model.setMathOp(Math.OPERATOR.MINUS);
+            calcAnswer = model.calculate();
             printAnswer();
             setUp();
         }
 
         if (opInput == 3) {
             TwoVars();
-            saveValueOfMathOp(Math.OPERATOR.MULTIPLY);
-            calculateAnswer();
+            model.setMathOp(Math.OPERATOR.MULTIPLY);
+            calcAnswer = model.calculate();
             printAnswer();
             setUp();
         }
 
         if (opInput == 4) {
             TwoVars();
-            saveValueOfMathOp(Math.OPERATOR.DIVIDE);
-            calculateAnswer();
+            model.setMathOp(Math.OPERATOR.DIVIDE);
+            calcAnswer = model.calculate();
             printAnswer();
             setUp();
         }
 
         if (opInput == 5) {
             TwoVars();
-            saveValueOfMathOp(Math.OPERATOR.MOD);
-            calculateAnswer();
+            model.setMathOp(Math.OPERATOR.MOD);
+            calcAnswer = model.calculate();
             printAnswer();
             setUp();
         }
 
         if (opInput == 6) {
             OneVar();
-            saveValueOfMathOp(Math.OPERATOR.SIN);
-            calculateAnswer();
+            model.setMathOp(Math.OPERATOR.SIN);
+            calcAnswer = model.calculate();
             printAnswer();
             setUp();
         }
 
         if (opInput == 7) {
             OneVar();
-            saveValueOfMathOp(Math.OPERATOR.COS);
-            calculateAnswer();
+            model.setMathOp(Math.OPERATOR.COS);
+            calcAnswer = model.calculate();
             printAnswer();
             setUp();
         }
 
         if (opInput == 8) {
             OneVar();
-            saveValueOfMathOp(Math.OPERATOR.TAN);
-            calculateAnswer();
+            model.setMathOp(Math.OPERATOR.TAN);
+            calcAnswer = model.calculate();
             printAnswer();
             setUp();
         }
 
         if (opInput == 9) {
             TwoVars();
-            saveValueOfMathOp(Math.OPERATOR.POWER);
-            calculateAnswer();
+            model.setMathOp(Math.OPERATOR.POWER);
+            calcAnswer = model.calculate();
             printAnswer();
             setUp();
         }
@@ -112,18 +112,21 @@ public class CalculatorConsoleUI extends CalculatorControl {
 
     public void TwoVars() {
         System.out.println("Enter arg1:");
-        arg1 = Input.nextDouble();
+        double var1 = Input.nextDouble();
+        model.setArg1(var1);
 
         System.out.println("Enter arg2:");
-        arg2 = Input.nextDouble();
+        double var2 = Input.nextDouble();
+        model.setArg2(var2);
     }
 
     public void OneVar() {
         System.out.println("Enter arg1:");
-        arg1 = Input.nextDouble();
+        double var1 = Input.nextDouble();
+        model.setArg1(var1);
     }
 
-    public void printAnswer(){
+    public void printAnswer() {
         System.out.println("Answer: "+calcAnswer+"\n");
     }
 

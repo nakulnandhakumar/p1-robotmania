@@ -25,7 +25,7 @@ public class Main extends JFrame {
             BattleshipGUI.main(null);
         });
         Calculator.addActionListener(e -> {
-            CalculatorControl.main(null);
+            CalculatorContrl.main(null);
         });
         HelloGame.addActionListener(e -> {
             RoboPrint.main(null);
