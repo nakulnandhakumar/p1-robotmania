@@ -1,4 +1,4 @@
-package Calculator;
+package TrioCalculator;
 
 import javax.swing.*;
 

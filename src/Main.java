@@ -1,10 +1,8 @@
 import BattleshipGame.*;
-import Calculator.*;
+import TrioCalculator.*;
 import HelloGame.*;
-import HangbotGame.*;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Main extends JFrame {
     private JButton Battleship;

@@ -71,7 +71,7 @@ I think that I should get a 4/5 because I worked on the Hangman GUI and ceated t
 
 -- Finish Hangman GUI Version Code
 
--- Make progress on Calculator 2.0
+-- Make progress on TrioCalculator 2.0
 
 -- Plan Monopoly
 <br/><br/>

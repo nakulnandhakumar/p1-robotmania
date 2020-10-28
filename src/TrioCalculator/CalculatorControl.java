@@ -1,5 +1,5 @@
-package Calculator;
-import Calculator.Math.OPERATOR;
+package TrioCalculator;
+import TrioCalculator.Math.OPERATOR;
 
 import javax.swing.*;
 
@@ -27,7 +27,7 @@ public class CalculatorControl extends JFrame {
 
     public void calculateAnswer()  // method to perform calculation
     {
-        calcAnswer = Calculator.Math.calculateIt(arg1, mathOp, arg2);
+        calcAnswer = TrioCalculator.Math.calculateIt(arg1, mathOp, arg2);
         mathState = CalculatorControl.STATE.CALC;
         initialCalcAreaInputState = true;
     }

@@ -1,4 +1,4 @@
-package Calculator;
+package TrioCalculator;
 import java.util.*;
 
 public class CalculatorConsoleUI extends CalculatorControl {
