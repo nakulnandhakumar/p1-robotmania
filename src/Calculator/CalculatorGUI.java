@@ -1,93 +1,46 @@
 package Calculator;
 
-import Calculator.Math.OPERATOR;
-
 import javax.swing.*;
 
-public class CalculatorGUI extends JFrame {
-    private JPanel panel1;
-    private JButton button_7;
-    private JButton button_4;
-    private JButton button_1;
-    private JButton button_2;
-    private JButton button_5;
-    private JButton button_8;
-    private JButton button_3;
-    private JButton button_6;
-    private JButton button_9;
-    private JButton button_0;
-    private JButton button_plus;
-    private JButton button_minus;
-    private JButton button_mult;
-    private JButton button_div;
-    private JButton button_mod;
-    private JButton button_equals;
-    private JLabel calcArea;
-    private JButton button_power;
-    private JButton button_sin;
-    private JButton button_tan;
-    private JButton button_cos;
-    private JButton button_clear;
+public class CalculatorGUI extends CalculatorControl {
+    public JPanel panel1;
+    public JButton button_7;
+    public JButton button_4;
+    public JButton button_1;
+    public JButton button_2;
+    public JButton button_5;
+    public JButton button_8;
+    public JButton button_3;
+    public JButton button_6;
+    public JButton button_9;
+    public JButton button_0;
+    public JButton button_plus;
+    public JButton button_minus;
+    public JButton button_mult;
+    public JButton button_div;
+    public JButton button_mod;
+    public JButton button_equals;
+    public JLabel calcArea;
+    public JButton button_power;
+    public JButton button_sin;
+    public JButton button_tan;
+    public JButton button_cos;
+    public JButton button_clear;
 
-    private boolean initialCalcAreaInputState;
-    private enum STATE { INITIAL, SAVE1, SAVE2, CALC }
-
-    private CalculatorGUI.STATE mathState;
-
-    // calculator values
-    private Math.OPERATOR mathOp;
-    private double arg1;
-    private double arg2;
-    private double calcAnswer;
-
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("CalculatorGUI");
-        frame.setContentPane(new CalculatorGUI().panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-    }
-
-    private void calculateAnswer()  // method to perform calculation
-    {
-        calcAnswer = Calculator.Math.calculateIt(arg1, mathOp, arg2);
-        calcArea.setText(String.valueOf(calcAnswer));
-        arg1 = Double.parseDouble(calcArea.getText());
-        mathState = CalculatorGUI.STATE.CALC;
-        initialCalcAreaInputState = true;
-    }
-
-    private void updateCalcArea(String string) {
+    public void updateCalcArea(String string) {
         if (initialCalcAreaInputState) {  // sets text to string on initial key typed
             calcArea.setText(string);
             initialCalcAreaInputState = false;
-        } else  {                         // concatenates string to end of text subsequent keys typed
+        } else {                         // concatenates string to end of text subsequent keys typed
             calcArea.setText(calcArea.getText() + string);
         }
     }
 
-    private void saveValueOfArg1() { // method to store 1st value in calculation (arg1)
-        arg1 = Double.parseDouble((calcArea.getText()));
-        mathState = CalculatorGUI.STATE.SAVE1;
-        initialCalcAreaInputState = true;
-    }
-
-    private void saveValueOfArg2() { // method to store 2nd value in calculation (arg2)
-        if (mathState != CalculatorGUI.STATE.CALC) {
-            arg2 = Double.parseDouble((calcArea.getText()));
-            mathState = CalculatorGUI.STATE.SAVE2;
-        }
-    }
-
-    private void saveValueOfMathOp(OPERATOR op) { // method to store operator
-        mathOp = op;
-    }
-
-    private void clearCalculator() {  // helper method to clear and update calculator to default
+    public void clearCalculator() {  // helper method to clear and update calculator to default
         // calculator control
         String calcAreaDefault = "0.0";
         calcArea.setText(calcAreaDefault);
-        mathState = CalculatorGUI.STATE.INITIAL;
+        mathState = CalculatorControl.STATE.INITIAL;
         initialCalcAreaInputState = true;
         arg1 = 0.0;
         arg2 = 0.0;
@@ -105,49 +58,83 @@ public class CalculatorGUI extends JFrame {
         button_8.addActionListener(e -> updateCalcArea(button_8.getText()));
         button_9.addActionListener(e -> updateCalcArea(button_9.getText()));
         button_0.addActionListener(e -> updateCalcArea(button_0.getText()));
+
         button_plus.addActionListener(e -> {
-            saveValueOfArg1();
-            saveValueOfMathOp(OPERATOR.PLUS);
+            arg1 = Double.parseDouble((calcArea.getText()));
+            mathState = CalculatorControl.STATE.SAVE1;
+            initialCalcAreaInputState = true;
+            saveValueOfMathOp(Math.OPERATOR.PLUS);
         });
+
         button_minus.addActionListener(e -> {
-            saveValueOfArg1();
-            saveValueOfMathOp(OPERATOR.MINUS);
+            arg1 = Double.parseDouble((calcArea.getText()));
+            mathState = CalculatorControl.STATE.SAVE1;
+            initialCalcAreaInputState = true;
+            saveValueOfMathOp(Math.OPERATOR.MINUS);
         });
+
         button_mult.addActionListener(e -> {
-            saveValueOfArg1();
-            saveValueOfMathOp(OPERATOR.MULTIPLY);
+            arg1 = Double.parseDouble((calcArea.getText()));
+            mathState = CalculatorControl.STATE.SAVE1;
+            initialCalcAreaInputState = true;
+            saveValueOfMathOp(Math.OPERATOR.MULTIPLY);
         });
+
         button_div.addActionListener(e -> {
-            saveValueOfArg1();
-            saveValueOfMathOp(OPERATOR.DIVIDE);
+            arg1 = Double.parseDouble((calcArea.getText()));
+            mathState = CalculatorControl.STATE.SAVE1;
+            initialCalcAreaInputState = true;
+            saveValueOfMathOp(Math.OPERATOR.DIVIDE);
         });
+
         button_power.addActionListener(e -> {
-            saveValueOfArg1();
-            saveValueOfMathOp(OPERATOR.POWER);
+            arg1 = Double.parseDouble((calcArea.getText()));
+            mathState = CalculatorControl.STATE.SAVE1;
+            initialCalcAreaInputState = true;
+            saveValueOfMathOp(Math.OPERATOR.POWER);
         });
+
         button_mod.addActionListener(e -> {
-            saveValueOfArg1();
-            saveValueOfMathOp(OPERATOR.MOD);
+            arg1 = Double.parseDouble((calcArea.getText()));
+            mathState = CalculatorControl.STATE.SAVE1;
+            initialCalcAreaInputState = true;
+            saveValueOfMathOp(Math.OPERATOR.MOD);
         });
+
         button_sin.addActionListener(e -> {
-            saveValueOfArg1();
-            saveValueOfMathOp(OPERATOR.SIN);
+            arg1 = Double.parseDouble((calcArea.getText()));
+            mathState = CalculatorControl.STATE.SAVE1;
+            initialCalcAreaInputState = true;
+            saveValueOfMathOp(Math.OPERATOR.SIN);
             calculateAnswer();
         });
+
         button_cos.addActionListener(e -> {
-            saveValueOfArg1();
-            saveValueOfMathOp(OPERATOR.COS);
+            arg1 = Double.parseDouble((calcArea.getText()));
+            mathState = CalculatorControl.STATE.SAVE1;
+            initialCalcAreaInputState = true;
+            saveValueOfMathOp(Math.OPERATOR.COS);
             calculateAnswer();
         });
+
         button_tan.addActionListener(e -> {
-            saveValueOfArg1();
-            saveValueOfMathOp(OPERATOR.TAN);
+            arg1 = Double.parseDouble((calcArea.getText()));
+            mathState = CalculatorControl.STATE.SAVE1;
+            initialCalcAreaInputState = true;
+            saveValueOfMathOp(Math.OPERATOR.TAN);
             calculateAnswer();
         });
+
         button_equals.addActionListener(e -> {
-            saveValueOfArg2();
+            if (mathState != CalculatorControl.STATE.CALC) {
+                arg2 = Double.parseDouble((calcArea.getText()));
+                mathState = CalculatorControl.STATE.SAVE2;
+            }
             calculateAnswer();
+            calcArea.setText(String.valueOf(calcAnswer));
+            arg1 = Double.parseDouble(calcArea.getText());
         });
+
         button_clear.addActionListener(e -> clearCalculator());
     }
 }
