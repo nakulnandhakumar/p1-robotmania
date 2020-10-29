@@ -1,3 +1,8 @@
+
+// Created by Nakul Nandhakumar and Vihan Jayaraman
+// GUI created by Nakul
+// Code worked on by Nakul and Vihan
+
 package BattleshipGame;
 
 import javax.swing.*;

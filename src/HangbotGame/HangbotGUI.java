@@ -1,7 +1,9 @@
+package HangbotGame;// Created by Sanvi Pal
+
 import javax.swing.*;
 import java.awt.*;
 
-public class RoboUI extends JPanel{
+public class HangbotGUI extends JPanel{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         int w = getWidth();
@@ -11,7 +13,7 @@ public class RoboUI extends JPanel{
         //g.drawRect(w/4, h/4,w/2,h/2);
 
         Toolkit t=Toolkit.getDefaultToolkit();
-        Image i = t.getImage("C:/Users/sanvi/IdeaProjects/Hangman/out/production/Hangman/images.png");
+        Image i = t.getImage("images.png");
         g.drawImage(i, 0, 0,this);
 
     }
