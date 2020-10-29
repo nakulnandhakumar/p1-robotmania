@@ -347,7 +347,7 @@ public class BattleshipGUI extends JFrame {
 
     public static void main(String[] args) {
         BattleshipGUI battleShip = new BattleshipGUI(8 ,8, 3);     //creates object of class battleship to run game and call game methods
-        battleShip.board.setAIShips(battleShip.shipList);
+        battleShip.setAIShips(battleShip.shipList, battleShip.board);
 
         JFrame frame = new JFrame("BattleshipGUI");     // instantiates frame object and uses it activate GUI
         frame.setContentPane(battleShip.panel1);
@@ -357,6 +357,51 @@ public class BattleshipGUI extends JFrame {
 
     }
 
+    public void setAIShips(ArrayList<Ship> shipList,Board board) { //method for setting enemy ships
+        int randomY;
+        int randomX;
+
+        for (Ship i : shipList) {    //for each loop makes sure that each ship in list gets placed on board
+            switch (i.orientation) {
+                case VERTICAL:
+
+                    randomY = (int) (Math.random() * (board.length - i.length + 1));    //random math integer for Y axis to randomly move ships veritcally
+                    System.out.println(randomY);
+
+                    randomX = (int) (Math.random() * (board.width));  //random math integer for X axis to move ships randomly horizontally
+                    System.out.println(randomX);
+
+                    for (int j = 0; j < i.length; j++) {  //prints enemy ships on board vertically
+                        if (board.boardArray.get(randomY + j).get(randomX) == 1) {
+                            shipOverlapAdjust();
+                        }
+                        board.boardArray.get(randomY + j).set(randomX, 1);
+                    }
+                    break;
+
+                case HORIZONTAL:
+
+                    randomY = (int) (Math.random() * (board.length));
+                    System.out.println(randomY);
+
+                    randomX = (int) (Math.random() * (board.width - i.length + 1));
+                    System.out.println(randomX);
+
+                    for (int j = 0; j < i.length; j++) {   //prints enemy ships horizontally
+                        if (board.boardArray.get(randomY).get(randomX + j) == 1) {
+                            shipOverlapAdjust();
+                        }
+                        board.boardArray.get(randomY).set(randomX + j, 1);
+                    }
+                    break;
+            }
+
+        }
+    }
+
+    public void setPlayerShips(ArrayList<Ship> shipList) { //work in progress for player ships
+
+    }
     public void shipOverlapAdjust() {   //method to reduce totalShipLength in case of ship overlapping
         totalShipLength--;
     }
@@ -454,11 +499,11 @@ class Ship {
 }
 
 
-class Board extends BattleshipGUI{
+class Board {
 
     //Battleship ship;
-    public int boardWidth;
-    public int boardLength;
+    public int width;
+    public int length;
     public int shipOverlapCount;
 
     public static final String ANSI_BLUE = "\u001B[34m";     //color schemes for UI of game
@@ -467,23 +512,23 @@ class Board extends BattleshipGUI{
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_BLACK = "\u001b[30;1m";
 
-    public ArrayList<ArrayList<Integer>> board = new ArrayList<ArrayList<Integer>>();
+    public ArrayList<ArrayList<Integer>> boardArray = new ArrayList<ArrayList<Integer>>();
 
     public Board() {
         this(8,8);      //set size of board
     }
 
     public Board(int boardWidth, int boardLength) {   //constructor for defining size of board
-        this.boardWidth = boardWidth;
-        this.boardLength = boardLength;
+        this.width = boardWidth;
+        this.length = boardLength;
     }
 
     public void createBoard() {
 
-        for (int i = 0; i < this.boardLength; i++) {     //Uses iteration to set 0 values for all positions of Arraylists. Adds arraylist inside arraylist to create 2D arraylist
-            board.add(new ArrayList<Integer>());
-            for (int j = 0; j < this.boardWidth; j++) {
-                board.get(i).add(0);
+        for (int i = 0; i < this.length; i++) {     //Uses iteration to set 0 values for all positions of Arraylists. Adds arraylist inside arraylist to create 2D arraylist
+            boardArray.add(new ArrayList<Integer>());
+            for (int j = 0; j < this.width; j++) {
+                boardArray.get(i).add(0);
             }
         }
     }
@@ -492,16 +537,16 @@ class Board extends BattleshipGUI{
 
         //Prints Top row of indices and board
         System.out.print("  ");
-        for (int i = 0; i < this.boardWidth; i++) {
+        for (int i = 0; i < this.width; i++) {
             System.out.print(ANSI_GREEN + (i+1) + " ");
         }
         System.out.print("\n");
 
 
-        for (int i = 0; i < this.boardLength; i++) {
+        for (int i = 0; i < this.length; i++) {
             //Side Row of indices and board
             System.out.print(ANSI_GREEN+ (i+1) + ANSI_RESET+ " ");
-            for (int point: board.get(i)) {
+            for (int point: boardArray.get(i)) {
                 switch (point) {
                     case 0:
                         System.out.print(ANSI_BLUE + point + ANSI_RESET + " ");   //game checks for different numbers which mean different things before choosing color to print
@@ -520,56 +565,15 @@ class Board extends BattleshipGUI{
     }
 
     public void setPoint(int row, int column, int value) {  //standard method for setting value @ coordinate
-        board.get(row).set(column, value);
+        boardArray.get(row).set(column, value);
     }
 
     public int getPoint(int row, int column) {   //gives coordinate so above method can be performed
-        return board.get(row).get(column);
+        return boardArray.get(row).get(column);
     }
 
-    public void setPlayerShips(ArrayList<Ship> shipList) { //work in progress for player ships
 
-    }
 
-    public void setAIShips(ArrayList<Ship> shipList) { //method for setting enemy ships
-        int randomY;
-        int randomX;
 
-        for (Ship i: shipList) {    //for each loop makes sure that each ship in list gets placed on board
-            switch(i.orientation) {
-                case VERTICAL:
-
-                    randomY = (int) (Math.random() * (boardLength-i.length+1));    //random math integer for Y axis to randomly move ships veritcally
-                    System.out.println(randomY);
-
-                    randomX = (int) (Math.random()* (boardWidth));  //random math integer for X axis to move ships randomly horizontally
-                    System.out.println(randomX);
-
-                    for (int j = 0; j < i.length; j++) {  //prints enemy ships on board vertically
-                        if (board.get(randomY+j).get(randomX) == 1) {
-                            shipOverlapAdjust();
-                        }
-                        board.get(randomY+j).set(randomX,1);
-                    }
-                    break;
-
-                case HORIZONTAL:
-
-                    randomY = (int) (Math.random() * (boardLength));
-                    System.out.println(randomY);
-
-                    randomX = (int) (Math.random()* (boardWidth-i.length+1));
-                    System.out.println(randomX);
-
-                    for (int j = 0; j < i.length; j++) {   //prints enemy ships horizontally
-                        if (board.get(randomY).get(randomX+j) == 1) {
-                            shipOverlapAdjust();
-                        }
-                        board.get(randomY).set(randomX+j,1);
-                    }
-                    break;
-            }
-
-        }
-    }
 }
+
