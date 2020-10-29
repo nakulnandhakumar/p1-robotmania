@@ -5,7 +5,7 @@ import java.util.Scanner;
 import TrioCalculator.Math.OPERATOR;
 
 public class CalculatorContrl extends JFrame {
-    private JButton GUIButton;
+    private JButton GUIButton;   // Initialize buttons, States, objects, and other variables
     private JPanel panel1;
     private JButton consoleButton;
 
@@ -20,9 +20,9 @@ public class CalculatorContrl extends JFrame {
 
     public CalculatorContrl() {
 
-        this.model = new CalculatorData();
+        this.model = new CalculatorData(); // Creates object "model" of CalcData class to manage data
 
-        GUIButton.addActionListener(e -> {
+        GUIButton.addActionListener(e -> {  // Button action to choose CalcGUI
             JFrame calcGUI = new JFrame("CalculatorGUI");
             calcGUI.setContentPane(new CalculatorGUI().panel1);
             calcGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,12 +30,12 @@ public class CalculatorContrl extends JFrame {
             calcGUI.setVisible(true);
         });
 
-        consoleButton.addActionListener(e -> {
+        consoleButton.addActionListener(e -> { // Button actions that runs ConsoleUI.main
             CalculatorConsoleUI.main(null);
         });
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {  // main menu to set CalcMenu visisble
         JFrame calcMenu = new JFrame("CalculatorMenu");
         calcMenu.setContentPane(new CalculatorContrl().panel1);
         calcMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -51,7 +51,17 @@ public class CalculatorContrl extends JFrame {
         return calcAnswer;
     }
 
+    public void saveValueOfArg1(double arg1)  // method to perform calculation
+    {
+        model.setArg1(arg1);
+    }
+
+    public void saveValueOfArg2(double arg2)  // method to perform calculation
+    {
+        model.setArg2(arg2);
+    }
+
     public void saveValueOfMathOp(Math.OPERATOR op) { // method to store operator
         model.setMathOp(op);
-    }
+    } // Save's the operation for calculation
 }

@@ -2,7 +2,7 @@ package TrioCalculator;
 import java.util.*;
 
 public class CalculatorConsoleUI extends CalculatorContrl {
-
+    // Initialize Scanner, and variables for user input
     private Scanner Input = new Scanner(System.in);
     private int opInput;
     private double calcAnswer;
@@ -11,7 +11,7 @@ public class CalculatorConsoleUI extends CalculatorContrl {
 
     }
 
-    public void setUp() {
+    public void setUp() {   // Initializes and Prints Console UI
         System.out.println("|-----------------------------|");
         System.out.println("|Welcome to Calculator Console|");
         System.out.println("|Please enter desired operator|");
@@ -29,81 +29,81 @@ public class CalculatorConsoleUI extends CalculatorContrl {
         System.out.println("|------------------------------");
 
         System.out.println("Enter Desired Operation:");
-        opInput = Input.nextInt();
+        opInput = Input.nextInt(); // User input for type of operation user wants to use
 
-        if (opInput == 1) {
+        if (opInput == 1) {   // if statements based on which operation chosen
             TwoVars();
-            model.setMathOp(Math.OPERATOR.PLUS);
-            calcAnswer = model.calculate();
+            saveValueOfMathOp(Math.OPERATOR.PLUS);
+            calcAnswer = calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 2) {
-            TwoVars();
-            model.setMathOp(Math.OPERATOR.MINUS);
-            calcAnswer = model.calculate();
-            printAnswer();
-            setUp();
+            TwoVars();                              // saves values of two args
+            saveValueOfMathOp(Math.OPERATOR.MINUS); // saves specific operation chosen to control and model code
+            calcAnswer = calculateAnswer();         // passes args to control, then model code, calculates and returns answer
+            printAnswer();                          // Calls print function which prints returned calculated answer
+            setUp();                                // Recursive function to keep calculating until exited
         }
 
         if (opInput == 3) {
             TwoVars();
-            model.setMathOp(Math.OPERATOR.MULTIPLY);
-            calcAnswer = model.calculate();
+            saveValueOfMathOp(Math.OPERATOR.MULTIPLY);
+            calcAnswer = calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 4) {
             TwoVars();
-            model.setMathOp(Math.OPERATOR.DIVIDE);
-            calcAnswer = model.calculate();
+            saveValueOfMathOp(Math.OPERATOR.DIVIDE);
+            calcAnswer = calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 5) {
             TwoVars();
-            model.setMathOp(Math.OPERATOR.MOD);
-            calcAnswer = model.calculate();
+            saveValueOfMathOp(Math.OPERATOR.MOD);
+            calcAnswer = calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 6) {
             OneVar();
-            model.setMathOp(Math.OPERATOR.SIN);
-            calcAnswer = model.calculate();
+            saveValueOfMathOp(Math.OPERATOR.SIN);
+            calcAnswer = calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 7) {
             OneVar();
-            model.setMathOp(Math.OPERATOR.COS);
-            calcAnswer = model.calculate();
+            saveValueOfMathOp(Math.OPERATOR.COS);
+            calcAnswer = calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 8) {
             OneVar();
-            model.setMathOp(Math.OPERATOR.TAN);
-            calcAnswer = model.calculate();
+            saveValueOfMathOp(Math.OPERATOR.TAN);
+            calcAnswer = calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 9) {
             TwoVars();
-            model.setMathOp(Math.OPERATOR.POWER);
-            calcAnswer = model.calculate();
+            saveValueOfMathOp(Math.OPERATOR.POWER);
+            calcAnswer = calculateAnswer();
             printAnswer();
             setUp();
         }
 
-        if (opInput == 0) {
+        if (opInput == 0) {     // Exit method for User to call when done
             System.out.println("Thanks for using CalculatorConsoleUI");
             System.exit(0);
         }
@@ -111,26 +111,26 @@ public class CalculatorConsoleUI extends CalculatorContrl {
     }
 
     public void TwoVars() {
-        System.out.println("Enter arg1:");
+        System.out.println("Enter arg1:");      // User input for arg1
         double var1 = Input.nextDouble();
-        model.setArg1(var1);
+        saveValueOfArg1(var1);                  // Sets arg1 in model code
 
-        System.out.println("Enter arg2:");
+        System.out.println("Enter arg2:");      // User input for arg2
         double var2 = Input.nextDouble();
-        model.setArg2(var2);
+        saveValueOfArg2(var2);                  // Sets arg2 in model code
     }
 
-    public void OneVar() {
+    public void OneVar() {      // Same as above arg saving method but only one arg for single arg operations
         System.out.println("Enter arg1:");
         double var1 = Input.nextDouble();
-        model.setArg1(var1);
+        saveValueOfArg1(var1);
     }
 
-    public void printAnswer() {
+    public void printAnswer() {     // Prints calcAnswer in string using Print statement
         System.out.println("Answer: "+calcAnswer+"\n");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { // Main method creates object of main class and calls setup recursive method
         CalculatorConsoleUI calculatorConsole = new CalculatorConsoleUI();
         calculatorConsole.setUp();
     }
