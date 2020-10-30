@@ -3,7 +3,7 @@ package HangbotGame;
 
 import java.util.Scanner;
 
-class HangbotStart extends HangbotPrint {
+public class HangbotStart extends HangbotPrint {
 
     public HangbotStart(){
 
@@ -73,10 +73,4 @@ class HangbotStart extends HangbotPrint {
         }
     }
 }
-
-
-
-
-
-
 
