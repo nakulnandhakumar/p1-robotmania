@@ -17,14 +17,14 @@ This readme entails both information about our project as well as our progress t
 
 **How to run our code:**
 
-**Nakul Nandhakumar and Vihan Jayaraman: Self-Grade /** 
-**TO-DO**
+**Nakul Nandhakumar and Vihan Jayaraman: Self-Grade / ** 
+**TO-DO:**
 
 **Sara Beniwal: Self-Grade /**
-**TO-DO**
+**TO-DO:**
 
 **Sanvi Pal: Self-Grade /**
 **TO-DO:**
 
 **Yasaswi Singamneni: Self-Grade /**
-**TO-DO**
+**TO-DO:**
