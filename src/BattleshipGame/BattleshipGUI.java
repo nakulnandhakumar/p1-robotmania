@@ -366,14 +366,14 @@ public class BattleshipGUI extends JFrame {
                 case VERTICAL:
 
                     randomY = (int) (Math.random() * (board.length - i.length + 1));    //random math integer for Y axis to randomly move ships veritcally
-                    System.out.println(randomY);
+
 
                     randomX = (int) (Math.random() * (board.width));  //random math integer for X axis to move ships randomly horizontally
-                    System.out.println(randomX);
+
 
                     for (int j = 0; j < i.length; j++) {  //prints enemy ships on board vertically
                         if (board.boardArray.get(randomY + j).get(randomX) == 1) {
-                            shipOverlapAdjust();
+                            totalShipLength--;
                         }
                         board.boardArray.get(randomY + j).set(randomX, 1);
                     }
@@ -382,14 +382,12 @@ public class BattleshipGUI extends JFrame {
                 case HORIZONTAL:
 
                     randomY = (int) (Math.random() * (board.length));
-                    System.out.println(randomY);
 
                     randomX = (int) (Math.random() * (board.width - i.length + 1));
-                    System.out.println(randomX);
 
                     for (int j = 0; j < i.length; j++) {   //prints enemy ships horizontally
                         if (board.boardArray.get(randomY).get(randomX + j) == 1) {
-                            shipOverlapAdjust();
+                            totalShipLength--;
                         }
                         board.boardArray.get(randomY).set(randomX + j, 1);
                     }
@@ -401,9 +399,6 @@ public class BattleshipGUI extends JFrame {
 
     public void setPlayerShips(ArrayList<Ship> shipList) { //work in progress for player ships
 
-    }
-    public void shipOverlapAdjust() {   //method to reduce totalShipLength in case of ship overlapping
-        totalShipLength--;
     }
 
 
@@ -444,6 +439,7 @@ public class BattleshipGUI extends JFrame {
 
         System.out.println("GameBoard");     //prints enemy board
         board.printBoard();
+
     }
 
     private static void help() {
