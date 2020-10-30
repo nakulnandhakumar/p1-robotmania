@@ -3,6 +3,11 @@
 
 package HelloGame;
 
+import HangbotGame.HangbotGUI;
+
+import javax.swing.*;
+import java.awt.*;
+
 public class RoboPrint {
 
 
@@ -11,7 +16,7 @@ public class RoboPrint {
     public final String ANSI_RED = "\u001B[31m";
 
     //Create ascii art string as 2D array
-    //2D beacuse we initally considered having multiple robots
+    //2D because we initially considered having multiple robots
     //Could be regular array
     String[][] robot = {
 
@@ -51,10 +56,18 @@ public class RoboPrint {
             System.out.println(ANSI_GREEN + robot[0][i] + ANSI_RESET);
             nLines--;
         }
-
+        JFrame window = new JFrame("RoboUI");
+        window.setBounds(125,125,220,350);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel canvas = new HangbotGUI();
+        canvas.setBackground(Color.WHITE);
+        window.getContentPane().add(canvas);
+        window.setVisible(true);
     }
     public static void main(String[] args) {
-       System.out.println("Hello");
+        System.out.println("Hello");
+        RoboPrint t = new RoboPrint();
+        t.Printy(13);
 
     }
 

@@ -1,6 +1,8 @@
 import BattleshipGame.*;
+import HangbotGame.HangbotGUI;
 import TrioCalculator.*;
 import HelloGame.*;
+import HangbotGame.*;
 
 import javax.swing.*;
 
@@ -29,6 +31,9 @@ public class Main extends JFrame {
         });
         HelloGame.addActionListener(e -> {
             RoboPrint.main(null);
+        });
+        Hangbot.addActionListener(e -> {
+            HangbotStart.main(null);
         });
     }
 }
