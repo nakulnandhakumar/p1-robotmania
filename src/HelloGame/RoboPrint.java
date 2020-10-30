@@ -16,7 +16,7 @@ public class RoboPrint {
     public final String ANSI_RED = "\u001B[31m";
 
     //Create ascii art string as 2D array
-    //2D beacuse we initally considered having multiple robots
+    //2D because we initially considered having multiple robots
     //Could be regular array
     String[][] robot = {
 
