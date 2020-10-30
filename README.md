@@ -15,7 +15,9 @@ This readme entails both information about our project as well as our progress t
 
 **Calculators:** As MVC is a key part of this project, we have incorporated the calculators assignment to this readme. Take a look at our calculators, some of which are a work in progress (Sara and Sanvi's. We have almost finished the two versions and are now in the process of connecting them).
 
-**How to run our code:**
+#How to run our code:
+
+#Self-Grade
 
 **Nakul Nandhakumar and Vihan Jayaraman: Self-Grade** 
 **TO-DO:**
