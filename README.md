@@ -1,94 +1,29 @@
 
-# p1-robotmania Project Updates
+# p1-robotmania Readme/Project Updates
 
-# Week 1
+# Week 2 - Advocacy Week
 
-**Nakul Nandhakumar and Vihan Jayaraman: Self-Grade 5/5** 
+This readme entails both information about our project as well as our progress throughout this week. As an overview, our project focuses on incorporating UI into games such as Battleship, Connect Four, and Hangman to provide an interactive appeal to the user. Instead of playing games on the console, they can use a more user-friendly version with simple to understand buttons, intriguing graphics, and vivid colors. Each member has made sure to make their own mark on the project, through the multiple games the user can choose from.
 
-I think that Vihan and I deserve a 5/5 as we have worked on the Battleship code throughout the week. I created and added the GUI for the Battleship, adpated the control code to fit the GUI, and improved some of the GUI aesthetics (which still need more work). Vihan copied over all the Battleship code and worked on improving certain aspects of the gameplay, like adjusting win condition variables in case of ship overlaps. Originally, Vihan couldn't get Github to work so I added the code which Vihan told me to add so it might look like Vihan didn't contribute to the code but in reality he did.
+**First, here is an overview of the games that can be chosen so far:**
+**Battleship:** Are you a fan of the classic two person game? Well here is our twist of the game using Java! In this code, you can choose buttons to hit at your opponents targets. Additionally, our easy to use interface makes the game much more simple and enjoyable.
 
--- Worked on Battleship GUI using SwingDesigner
+**Connect Four:** Try this UI version of Connect Four! Press buttons that coordinate to certain columns to "drop" your pieces. Play with a friend and compete to see who will make four in a row first! *Please note: Currently a work in progress*
 
--- Successfully adapted control code to new UI
+**Hangbot:** A fan of hangman? Check out hangbot, a single player game that will test your guessing ability. With a plethora of words and an engaging UI, you will be sure to enjoy this game! *Please note: Currently a work in progress*
 
--- Kept text and console based elements in code to work in tangent with UI control code
+**Calculators:** As MVC is a key part of this project, we have incorporated the calculators assignment to this readme. Take a look at our calculators, some of which are a work in progress (Sara and Sanvi's. We have almost finished the two versions and are now in the process of connecting them).
 
--- Worked on adapting control code for potential ship overlaps
+**How to run our code:**
 
--- Experimented with instantiating GUI after extending GUI class file in other classes
-
+**Nakul Nandhakumar and Vihan Jayaraman: Self-Grade /** 
 **TO-DO**
 
--- Aesthetical improvements to GUI for user satisfaction
-
--- Adapt control code to better handle ship overlaps and conditions
-
--- improvements to technical ease of user interaction needed (ex. button pressing, more intuitive button placement/text/names etc.)
-
--- Potenitally start UI for monopoly/tick-tack-toe/hangman games??? 
-
--- Work on adding a playerBoard for enemy to guess and attack player ships
-<br/><br/>
-
-**Sara Beniwal: Self-Grade 5/5**
-
--- Worked on Connect Four GUI using SwingDesigner
-
--- Planned out the GUI's appearance: 7 columns, 6 rows; color scheme; buttons to indicate drop
-    
--- In the process of revising repl.it code to function with GUI
-
--- No longer an array; needs to be removed and connected to new GUI gameboard
-
--- User no longer required to input which column to drop; instead must press button corresponding to column
-
--- Check for win and player turn algorithms should stay the same
-
+**Sara Beniwal: Self-Grade /**
 **TO-DO**
 
--- Improve and finalize look of Connect Four Gameboard
-
--- Add clear instructions for user experience
-
--- Finalize code with comments to explain each part
-
--- Potentially start new UI project w fellow teammates
-<br/><br/>
-
-**Sanvi Pal: Self-Grade 4/5**
-
-I think that I should get a 4/5 because I worked on the Hangman GUI and ceated the corresponding algorithm that goes along with it. I think that should lose one point though because I procrastinated and didn't make the syntax for the hangman global and only made it local.
-
--- Created algo to run hangman with GUI: Will expand size of white rectangle on top of the robot for every wrong answer in order to create illusion of disappearing robot
-
--- Work on familiarizing myself with java syntax related to GUI
-
--- Embedded external asset (image) to GUI of game
-
--- Created calculator with 12 buttons
-
+**Sanvi Pal: Self-Grade /**
 **TO-DO:**
 
--- Finish Hangman GUI Version Code
-
--- Make progress on TrioCalculator 2.0
-
--- Plan Monopoly
-<br/><br/>
-
-**Yasaswi Singamneni: Self-Grade 5/5**
- 
- I think that I deserve a 5/5 because I worked in the HelloGame GUI and adapted the control code to match thr GUI.
- 
- -- Started working on GUI version of HelloGame
- 
- -- Started making new memory game GUI
- 
- -- Used Git to upload previous code to repo
- 
- **TO-DO**
- 
- -- Push code for HelloGame GUI version after fixing some bugs
- 
- -- Finish Memory Game GUI
- <br/><br/>
+**Yasaswi Singamneni: Self-Grade /**
+**TO-DO**
