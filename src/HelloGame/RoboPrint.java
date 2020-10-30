@@ -48,6 +48,9 @@ public class RoboPrint {
                 System.out.println(ANSI_GREEN + robot[0][i]+ANSI_RESET);
             }
         }
+
+
+
     }
     //Same as before but uses function overloading to only print robot for hangman
     public void Printy(int nLines) {
