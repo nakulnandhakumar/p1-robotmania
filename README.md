@@ -20,6 +20,8 @@ This readme entails both information about our project as well as our progress t
 # Self-Grade & Contributions
 
 | Self Grade | Person | Contributions |
+| ---------- | ------ | ------------- |
+|   19/20    | Nakul Nandhakumar | This past week, I worked on the main project menu and my trio team's Calculator. For the main menu, I created a GUI in Swing designer and added buttons to be clicked for accessing the main files of our project. I added actionlisteners to call the .main method of each major file. For the Calculator, I created a Console UI snad started to separate MVC. I have created a separate class for the model and have abstracted all the model methods and functions, for exmaple, things like setarg1, setarg2, calculate, and setmathop. I have made control an intermediary that calls these model methods when the UIs need them. I have abstracted the methods specific to view, like setCalcArea, and clearCalcArea, to the view files. |
 
 **Nakul Nandhakumar and Vihan Jayaraman: Self-Grade** 
 **TO-DO:**
