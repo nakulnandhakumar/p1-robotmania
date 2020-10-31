@@ -40,10 +40,10 @@ public class Main extends JFrame {
         HelloGameButton.addActionListener(e -> {
             HelloGame.main(null);
         });
-        Sara_Sanvi_CalcConsole.addActionListener(e -> {
+        Sara_Sanvi_CalcGUI.addActionListener(e -> {
             CalculatorUI.main(null);
         });
-        Sara_Sanvi_CalcGUI.addActionListener(e -> {
+        Sara_Sanvi_CalcConsole.addActionListener(e -> {
             ConsoleBasedUI.main(null);
         });
         Hangbot.addActionListener(e -> {
