@@ -4,7 +4,7 @@ import javax.swing.*;
 
 
 public class ConnectFourGUI {
-    private JPanel panel1;
+    public JPanel panel1;
     private JButton a0Button;
     private JButton a1Button;
     private JButton a2Button;
