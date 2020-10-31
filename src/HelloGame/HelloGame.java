@@ -1,5 +1,9 @@
 package HelloGame;
 
+import HangbotGame.HangbotGUI;
+
+import javax.swing.*;
+import java.awt.*;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,6 +24,14 @@ public class HelloGame {
 
     //Game loop
     public void game(){
+
+        JFrame window = new JFrame("RoboUI");
+        window.setBounds(125,125,220,350);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel canvas = new GUI();
+        canvas.setBackground(Color.WHITE);
+        window.getContentPane().add(canvas);
+        window.setVisible(true);
 
         //New instances of RoboPrint for robpt ascii art and scanner in order to have i/o with user
         RoboPrint roboTalk = new RoboPrint();
