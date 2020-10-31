@@ -30,3 +30,4 @@ This readme entails both information about our project as well as our progress t
 | **19/20**  | Sara Beniwal | Contributions:   |
 | **19/20**  | Sanvi Pal | Contributions:   |
 | **19/20**  | Vihan Jayaraman | Contributions:   |
+| **19/20**  | Yasaswi Singamneni | Contributions: This week, I added a GUI to my [HelloGame](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/HelloGame/HelloGame.java#L31), which curently displays an image of a robot, but will later have a text field in order for the user to input their answer directly into the GUI, along with also fixing some bugs in HelloGame. I also finished the functionality for the Memory Game, and will add the code to the repo once I finish the GUI for the game. **TO-DO:** - Finish GUI for Memory Game. -Add Text Field for HelloGame to allow user to input answers in the GUI.|
