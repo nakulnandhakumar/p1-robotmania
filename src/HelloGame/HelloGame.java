@@ -28,7 +28,7 @@ public class HelloGame {
         JFrame window = new JFrame("RoboUI");
         window.setBounds(125,125,220,350);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel canvas = new HangbotGUI();
+        JPanel canvas = new GUI();
         canvas.setBackground(Color.WHITE);
         window.getContentPane().add(canvas);
         window.setVisible(true);
