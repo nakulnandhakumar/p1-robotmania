@@ -17,6 +17,11 @@ This readme entails both information about our project as well as our progress t
 
 # How to run our code:
 
+- To run our code, click the green play button at the top right of the IntelliJ window
+- That will open up a GUI window with buttons that have the names of the different files of the project
+- clicking one of the buttons will run the corresponding file from our project
+- closing the gui window will quit the entire runnning project, and you have to click the green play button to run it again
+
 # Self-Grade & Contributions
 
 | Self Grade | Person | Contributions |
@@ -25,9 +30,3 @@ This readme entails both information about our project as well as our progress t
 | **19/20**  | Sara Beniwal | Contributions:   |
 | **19/20**  | Sanvi Pal | Contributions:   |
 | **19/20**  | Vihan Jayaraman | Contributions:   |
-
-**Sanvi Pal: Self-Grade**
-**TO-DO:**
-
-**Yasaswi Singamneni: Self-Grade**
-**TO-DO:**
