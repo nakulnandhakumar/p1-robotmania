@@ -1,6 +1,6 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-/p1-robotmania/out/*
+/p1-robotmania/out/
 /p1-robotmania/out/production/p1-robotmania/com/*.class
 /p1-robotmania/out/production/p1-robotmania/BattleshipGame/*.class
