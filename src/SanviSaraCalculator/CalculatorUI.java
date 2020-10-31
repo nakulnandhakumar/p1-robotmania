@@ -1,13 +1,13 @@
 //
 // Source code recreated from a .class file by IntelliJ IDEA
 // (powered by FernFlower decompiler)
-//
+// New annotations made by Sara in order to grasp the UI to incorporate in our version.
 
 package SanviSaraCalculator;
 
 import SanviSaraCalculator.Math.OPERATOR;
 
-import javax.swing.*;
+import javax.swing.*; // These items are necessary to run the code; contain UI info
 import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -15,6 +15,8 @@ import java.awt.event.MouseEvent;
 
 public class CalculatorUI extends JFrame {
     private final JLabel calcArea = new JLabel("");
+    // This is how the result is stored. This is crucial for the calculator.
+
     private boolean initialCalcAreaInputState;
     private STATE mathState;
     private OPERATOR mathOp;
@@ -22,7 +24,7 @@ public class CalculatorUI extends JFrame {
     private double arg2;
     private double calcAnswer;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { // Creates the calculator frame
         EventQueue.invokeLater(() -> {
             try {
                 CalculatorUI frame = new CalculatorUI();
@@ -34,7 +36,7 @@ public class CalculatorUI extends JFrame {
         });
     }
 
-    private void calculateAnswer() {
+    private void calculateAnswer() { //This is how the calculation is established.
         this.calcAnswer = Math.calculateIt(this.arg1, this.mathOp, this.arg2);
         this.calcArea.setText(String.valueOf(this.calcAnswer));
         this.arg1 = Double.parseDouble(this.calcArea.getText());
@@ -42,7 +44,7 @@ public class CalculatorUI extends JFrame {
         this.initialCalcAreaInputState = true;
     }
 
-    private void updateCalcArea(String string) {
+    private void updateCalcArea(String string) {  // This is how the code is added to the JLabel.
         if (this.initialCalcAreaInputState) {
             this.calcArea.setText(string);
             this.initialCalcAreaInputState = false;
@@ -54,13 +56,13 @@ public class CalculatorUI extends JFrame {
 
     }
 
-    private void saveValueOfArg1() {
+    private void saveValueOfArg1() { // The first value the user enters is stored here.
         this.arg1 = Double.parseDouble(this.calcArea.getText());
         this.mathState = STATE.SAVE1;
         this.initialCalcAreaInputState = true;
     }
 
-    private void saveValueOfArg2() {
+    private void saveValueOfArg2() { // The second value the user enters is stored here.
         if (this.mathState != STATE.CALC) {
             this.arg2 = Double.parseDouble(this.calcArea.getText());
             this.mathState = STATE.SAVE2;
@@ -70,7 +72,7 @@ public class CalculatorUI extends JFrame {
 
     private void saveValueOfMathOp(OPERATOR op) {
         this.mathOp = op;
-    }
+    } // This is where the operation is stored.
 
     private void clearCalculator() {
         String calcAreaDefault = "0.0";
@@ -82,17 +84,17 @@ public class CalculatorUI extends JFrame {
         this.calcAnswer = 0.0D;
     }
 
-    public CalculatorUI() {
-        this.getContentPane().setBackground(new Color(29, 147, 187));
+    public CalculatorUI() { // These functions should be done using swing designer
+        this.getContentPane().setBackground(new Color(29, 147, 187)); //Background color
         this.setDefaultCloseOperation(2);
         this.setBounds(100, 100, 418, 450);
         this.getContentPane().setLayout((LayoutManager)null);
         this.calcArea.setForeground(Color.BLACK);
-        this.calcArea.setFont(new Font("Times New Roman", 0, 72));
+        this.calcArea.setFont(new Font("Times New Roman", 0, 72)); //Font, fontsize
         this.calcArea.setHorizontalAlignment(4);
         this.calcArea.setBounds(18, 6, 377, 67);
         this.getContentPane().add(this.calcArea);
-        final JButton button_1 = new JButton("1");
+        final JButton button_1 = new JButton("1"); // First button: value of 1
         button_1.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 button_1.setBackground(Color.GREEN);
@@ -111,7 +113,7 @@ public class CalculatorUI extends JFrame {
         });
         button_1.setBounds(35, 86, 75, 40);
         this.getContentPane().add(button_1);
-        final JButton button_2 = new JButton("2");
+        final JButton button_2 = new JButton("2"); // Button 2: Button w value of 2
         button_2.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 button_2.setBackground(Color.GREEN);
@@ -121,7 +123,7 @@ public class CalculatorUI extends JFrame {
                 button_2.setBackground(Color.GREEN);
             }
         });
-        button_2.addActionListener((e) -> {
+        button_2.addActionListener((e) -> { // This is how by pressing the button, the user actually creates the action
             this.updateCalcArea(button_2.getText());
         });
         button_2.setOpaque(true);
@@ -140,7 +142,7 @@ public class CalculatorUI extends JFrame {
                 button_3.setBackground(Color.GREEN);
             }
         });
-        button_3.addActionListener((e) -> {
+        button_3.addActionListener((e) -> { // Third button: 3
             this.updateCalcArea(button_3.getText());
         });
         button_3.setOpaque(true);
@@ -159,7 +161,7 @@ public class CalculatorUI extends JFrame {
                 button_4.setBackground(Color.GREEN);
             }
         });
-        button_4.addActionListener((e) -> {
+        button_4.addActionListener((e) -> { // Fourth button: 4
             this.updateCalcArea(button_4.getText());
         });
         button_4.setOpaque(true);
@@ -168,7 +170,7 @@ public class CalculatorUI extends JFrame {
         button_4.setBackground(Color.GREEN);
         button_4.setBounds(35, 138, 75, 40);
         this.getContentPane().add(button_4);
-        final JButton button_5 = new JButton("5");
+        final JButton button_5 = new JButton("5"); // Fifth button: 5
         button_5.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 button_5.setBackground(Color.GREEN);
@@ -187,7 +189,7 @@ public class CalculatorUI extends JFrame {
         button_5.setBackground(Color.GREEN);
         button_5.setBounds(122, 138, 75, 40);
         this.getContentPane().add(button_5);
-        final JButton button_6 = new JButton("6");
+        final JButton button_6 = new JButton("6"); // Sixth button: 6
         button_6.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 button_6.setBackground(Color.GREEN);
@@ -206,7 +208,7 @@ public class CalculatorUI extends JFrame {
         button_6.setBackground(Color.GREEN);
         button_6.setBounds(209, 138, 75, 40);
         this.getContentPane().add(button_6);
-        final JButton button_7 = new JButton("7");
+        final JButton button_7 = new JButton("7"); // Seventh button: 7
         button_7.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 button_7.setBackground(Color.GREEN);
@@ -225,7 +227,7 @@ public class CalculatorUI extends JFrame {
         button_7.setBackground(Color.GREEN);
         button_7.setBounds(35, 190, 75, 40);
         this.getContentPane().add(button_7);
-        final JButton button_8 = new JButton("8");
+        final JButton button_8 = new JButton("8"); // Eighth button: 8
         button_8.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 button_8.setBackground(Color.GREEN);
@@ -244,7 +246,7 @@ public class CalculatorUI extends JFrame {
         button_8.setBackground(Color.GREEN);
         button_8.setBounds(122, 190, 75, 40);
         this.getContentPane().add(button_8);
-        final JButton button_9 = new JButton("9");
+        final JButton button_9 = new JButton("9"); // Ninth button: 9
         button_9.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 button_9.setBackground(Color.GREEN);
@@ -273,7 +275,7 @@ public class CalculatorUI extends JFrame {
                 button_0.setBackground(Color.GREEN);
             }
         });
-        button_0.addActionListener((e) -> {
+        button_0.addActionListener((e) -> { // Tenth button: 0
             this.updateCalcArea(button_0.getText());
         });
         button_0.setOpaque(true);
@@ -282,7 +284,7 @@ public class CalculatorUI extends JFrame {
         button_0.setBackground(Color.GREEN);
         button_0.setBounds(122, 242, 75, 40);
         this.getContentPane().add(button_0);
-        final JButton button_plus = new JButton("+");
+        final JButton button_plus = new JButton("+"); // Button for addition
         button_plus.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 button_plus.setBackground(Color.BLACK);
@@ -302,7 +304,7 @@ public class CalculatorUI extends JFrame {
         button_plus.setBackground(Color.GREEN);
         button_plus.setBounds(327, 138, 75, 40);
         this.getContentPane().add(button_plus);
-        final JButton button_minus = new JButton("-");
+        final JButton button_minus = new JButton("-"); // Button for subtraction
         button_minus.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 button_minus.setBackground(Color.BLACK);
@@ -324,7 +326,7 @@ public class CalculatorUI extends JFrame {
         this.getContentPane().add(button_minus);
 
 // Modulus button added here by Sara
-        final JButton button_modulus = new JButton("%");
+        final JButton button_modulus = new JButton("%"); // Button for modulus
         button_modulus.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 button_modulus.setBackground(Color.BLACK);
@@ -346,7 +348,7 @@ public class CalculatorUI extends JFrame {
         this.getContentPane().add(button_modulus);
 // 327, 242, 75, 40
 
-        final JButton button_equals = new JButton("=");
+        final JButton button_equals = new JButton("="); // Button for equals
         button_equals.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 button_equals.setBackground(Color.BLACK);
