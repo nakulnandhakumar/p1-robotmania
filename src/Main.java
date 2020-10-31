@@ -1,4 +1,5 @@
 import BattleshipGame.*;
+import ConnectFourGame.ConnectFourUI;
 import HelloGame.*;
 import SanviSaraCalculator.CalculatorUI;
 import SanviSaraCalculator.ConsoleBasedUI;
@@ -17,6 +18,7 @@ public class Main extends JFrame {
     private JButton HelloGameButton;
     private JButton Sara_Sanvi_CalcConsole;
     private JLabel mainLabel;
+    private JButton ConnectFourButton;
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -48,6 +50,9 @@ public class Main extends JFrame {
         });
         Hangbot.addActionListener(e -> {
             HangbotStart.main(null);
+        });
+        ConnectFourButton.addActionListener(e -> {
+            ConnectFourUI.main(null);
         });
     }
 }
