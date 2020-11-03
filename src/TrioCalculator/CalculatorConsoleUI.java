@@ -1,12 +1,12 @@
 package TrioCalculator;
 import java.util.*;
 
-public class CalculatorConsoleUI extends CalculatorControl {
+public class CalculatorConsoleUI {
     // Initialize Scanner, and variables for user input
     private Scanner Input = new Scanner(System.in);
     private int opInput;
     private double calcAnswer;
-    private CalculatorControl calcControl = new CalculatorControl();
+    private CalculatorControl calcControl;
 
     public CalculatorConsoleUI() {
 

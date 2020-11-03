@@ -2,7 +2,11 @@ package TrioCalculator;
 
 import javax.swing.*;
 
-public class CalculatorControl {
+public class CalculatorControl extends JFrame {
+    private JButton GUIButton;   // Initialize buttons, States, objects, and other variables
+    private JPanel panel1;
+    private JButton consoleButton;
+    private CalculatorConsoleUI calculatorConsole = new CalculatorConsoleUI();
 
     public enum STATE {INITIAL, SAVE1, SAVE2, CALC}
     public CalculatorControl.STATE mathState;
@@ -13,13 +17,19 @@ public class CalculatorControl {
 
     public CalculatorControl() {
         this.model = new CalculatorData(); // Creates object "model" of CalcData class to manage data
-        this.view = new CalculatorGUI(this);
 
-        JFrame calcGUI = new JFrame("CalculatorGUI");
-        calcGUI.setContentPane(view.panel1);
-        calcGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        calcGUI.pack();
-        calcGUI.setVisible(true);
+        GUIButton.addActionListener(e -> {  // Button action to choose CalcGUI
+            this.view = new CalculatorGUI(this);
+            JFrame calcGUI = new JFrame("CalculatorGUI");
+            calcGUI.setContentPane(view.panel1);
+            calcGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            calcGUI.pack();
+            calcGUI.setVisible(true);
+        });
+
+        consoleButton.addActionListener(e -> { // Button actions that runs ConsoleUI.main
+            calculatorConsole.setUp();
+        });
     }
 
     public double calculateAnswer()  // method to perform calculation
@@ -51,12 +61,16 @@ public class CalculatorControl {
 
     public void clearCalculator() {  // helper method to clear and update calculator to default
         // calculator control
-        mathState = STATE.INITIAL;
+        mathState = CalculatorControl.STATE.INITIAL;
         model = new CalculatorData();
         view.initCalcArea();
     }
 
-    public static void main(String[] args) {  // main menu to set CalcMenu visible
-        new CalculatorControl();
+    public static void main(String[] args) {  // main menu to set CalcMenu visisble
+        JFrame calcMenu = new JFrame("CalculatorMenu");
+        calcMenu.setContentPane(new CalculatorControl().panel1);
+        calcMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        calcMenu.pack();
+        calcMenu.setVisible(true);
     }
 }
