@@ -1,8 +1,9 @@
 package TrioCalculator;
 
+import TrioCalculator.Math.OPERATOR;
 import javax.swing.*;
 
-public class CalculatorGUI extends CalculatorContrl {
+public class CalculatorGUI extends JFrame {
     public JPanel panel1;
     public JButton button_7;
     public JButton button_4;
@@ -28,17 +29,8 @@ public class CalculatorGUI extends CalculatorContrl {
     public JButton button_clear;
 
     private double calcAnswer;
-
-    public void clearCalculator() {  // helper method to clear and update calculator to default
-        // calculator control
-        String calcAreaDefault = "0.0";
-        calcArea.setText(calcAreaDefault);
-        mathState = CalculatorContrl.STATE.INITIAL;
-        initialCalcAreaInputState = true;
-        model.setArg1(0.0);
-        model.setArg2(0.0);
-        calcAnswer = 0.0;
-    }
+    private final String calcAreaDefault = "0.0";
+    private boolean initialCalcAreaInputState;
 
     public void updateCalcArea(String string) {
         if (initialCalcAreaInputState) {  // sets text to string on initial key typed
@@ -49,7 +41,16 @@ public class CalculatorGUI extends CalculatorContrl {
         }
     }
 
-    public CalculatorGUI() {
+    public void initCalcArea() {
+        this.initInputState();
+        calcArea.setText(calcAreaDefault);
+    }
+
+    public void initInputState() {
+        initialCalcAreaInputState = true;
+    }
+
+    public CalculatorGUI(CalculatorControl calcControl) {
         button_1.addActionListener(e -> updateCalcArea(button_1.getText()));
         button_2.addActionListener(e -> updateCalcArea(button_2.getText()));
         button_3.addActionListener(e -> updateCalcArea(button_3.getText()));
@@ -62,88 +63,66 @@ public class CalculatorGUI extends CalculatorContrl {
         button_0.addActionListener(e -> updateCalcArea(button_0.getText()));
 
         button_plus.addActionListener(e -> {
-            model.setArg1(Double.parseDouble((calcArea.getText())));
-            mathState = CalculatorContrl.STATE.SAVE1;
-            initialCalcAreaInputState = true;
-            saveValueOfMathOp(Math.OPERATOR.PLUS);
+            calcControl.saveValueOfArg1(Double.parseDouble((calcArea.getText())));
+            calcControl.saveValueOfMathOp(Math.OPERATOR.PLUS);
         });
 
         button_minus.addActionListener(e -> {
-            model.setArg1(Double.parseDouble((calcArea.getText())));
-            mathState = CalculatorContrl.STATE.SAVE1;
-            initialCalcAreaInputState = true;
-            saveValueOfMathOp(Math.OPERATOR.MINUS);
+            calcControl.saveValueOfArg1(Double.parseDouble((calcArea.getText())));
+            calcControl.saveValueOfMathOp(Math.OPERATOR.MINUS);
         });
 
         button_mult.addActionListener(e -> {
-            model.setArg1(Double.parseDouble((calcArea.getText())));
-            mathState = CalculatorContrl.STATE.SAVE1;
-            initialCalcAreaInputState = true;
-            saveValueOfMathOp(Math.OPERATOR.MULTIPLY);
+            calcControl.saveValueOfArg1(Double.parseDouble((calcArea.getText())));
+            calcControl.saveValueOfMathOp(Math.OPERATOR.MULTIPLY);
         });
 
         button_div.addActionListener(e -> {
-            model.setArg1(Double.parseDouble((calcArea.getText())));
-            mathState = CalculatorContrl.STATE.SAVE1;
-            initialCalcAreaInputState = true;
-            saveValueOfMathOp(Math.OPERATOR.DIVIDE);
+            calcControl.saveValueOfArg1(Double.parseDouble((calcArea.getText())));
+            calcControl.saveValueOfMathOp(Math.OPERATOR.DIVIDE);
         });
 
         button_power.addActionListener(e -> {
-            model.setArg1(Double.parseDouble((calcArea.getText())));
-            mathState = CalculatorContrl.STATE.SAVE1;
-            initialCalcAreaInputState = true;
-            saveValueOfMathOp(Math.OPERATOR.POWER);
+            calcControl.saveValueOfArg1(Double.parseDouble((calcArea.getText())));
+            calcControl.saveValueOfMathOp(Math.OPERATOR.POWER);
         });
 
         button_mod.addActionListener(e -> {
-            model.setArg1(Double.parseDouble((calcArea.getText())));
-            mathState = CalculatorContrl.STATE.SAVE1;
-            initialCalcAreaInputState = true;
-            saveValueOfMathOp(Math.OPERATOR.MOD);
+            calcControl.saveValueOfArg1(Double.parseDouble((calcArea.getText())));
+            calcControl.saveValueOfMathOp(Math.OPERATOR.MOD);
         });
 
         button_sin.addActionListener(e -> {
-            model.setArg1(Double.parseDouble((calcArea.getText())));
-            mathState = CalculatorContrl.STATE.SAVE1;
-            initialCalcAreaInputState = true;
-            saveValueOfMathOp(Math.OPERATOR.SIN);
-            calcAnswer = calculateAnswer();
+            calcControl.saveValueOfArg1(Double.parseDouble((calcArea.getText())));
+            calcControl.saveValueOfMathOp(Math.OPERATOR.SIN);
+
+            calcAnswer = calcControl.calculateAnswer();
             calcArea.setText(String.valueOf(calcAnswer));
-            model.setArg1(Double.parseDouble((calcArea.getText())));
         });
 
         button_cos.addActionListener(e -> {
-            model.setArg1(Double.parseDouble((calcArea.getText())));
-            mathState = CalculatorContrl.STATE.SAVE1;
-            initialCalcAreaInputState = true;
-            saveValueOfMathOp(Math.OPERATOR.COS);
-            calcAnswer = calculateAnswer();
+            calcControl.saveValueOfArg1(Double.parseDouble((calcArea.getText())));
+            calcControl.saveValueOfMathOp(Math.OPERATOR.COS);
+
+            calcAnswer = calcControl.calculateAnswer();
             calcArea.setText(String.valueOf(calcAnswer));
-            model.setArg1(Double.parseDouble((calcArea.getText())));
         });
 
         button_tan.addActionListener(e -> {
-            model.setArg1(Double.parseDouble((calcArea.getText())));
-            mathState = CalculatorContrl.STATE.SAVE1;
-            initialCalcAreaInputState = true;
-            saveValueOfMathOp(Math.OPERATOR.TAN);
-            calcAnswer = calculateAnswer();
+            calcControl.saveValueOfArg1(Double.parseDouble((calcArea.getText())));
+            calcControl.saveValueOfMathOp(Math.OPERATOR.TAN);
+
+            calcAnswer = calcControl.calculateAnswer();
             calcArea.setText(String.valueOf(calcAnswer));
-            model.setArg1(Double.parseDouble((calcArea.getText())));
         });
 
         button_equals.addActionListener(e -> {
-            if (mathState != CalculatorContrl.STATE.CALC) {
-                model.setArg2(Double.parseDouble((calcArea.getText())));
-                mathState = CalculatorContrl.STATE.SAVE2;
-            }
-            calcAnswer = calculateAnswer();
+            calcControl.saveValueOfArg2(Double.parseDouble((calcArea.getText())));
+            calcAnswer = calcControl.calculateAnswer();
             calcArea.setText(String.valueOf(calcAnswer));
-            model.setArg1(Double.parseDouble((calcArea.getText())));
         });
 
-        button_clear.addActionListener(e -> clearCalculator());
+        button_clear.addActionListener(e -> calcControl.clearCalculator());
     }
 }
 

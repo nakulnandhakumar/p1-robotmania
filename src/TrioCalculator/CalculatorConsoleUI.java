@@ -1,13 +1,14 @@
 package TrioCalculator;
 import java.util.*;
 
-public class CalculatorConsoleUI extends CalculatorContrl {
+public class CalculatorConsoleUI extends CalculatorControl {
     // Initialize Scanner, and variables for user input
     private Scanner Input = new Scanner(System.in);
     private int opInput;
     private double calcAnswer;
+    private CalculatorControl calcControl = new CalculatorControl();
 
-    public CalculatorConsoleUI(){
+    public CalculatorConsoleUI() {
 
     }
 
@@ -33,72 +34,72 @@ public class CalculatorConsoleUI extends CalculatorContrl {
 
         if (opInput == 1) {   // if statements based on which operation chosen
             TwoVars();
-            saveValueOfMathOp(Math.OPERATOR.PLUS);
-            calcAnswer = calculateAnswer();
+            calcControl.saveValueOfMathOp(Math.OPERATOR.PLUS);
+            calcAnswer = calcControl.calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 2) {
             TwoVars();                              // saves values of two args
-            saveValueOfMathOp(Math.OPERATOR.MINUS); // saves specific operation chosen to control and model code
-            calcAnswer = calculateAnswer();         // passes args to control, then model code, calculates and returns answer
+            calcControl.saveValueOfMathOp(Math.OPERATOR.MINUS); // saves specific operation chosen to control and model code
+            calcAnswer = calcControl.calculateAnswer();         // passes args to control, then model code, calculates and returns answer
             printAnswer();                          // Calls print function which prints returned calculated answer
             setUp();                                // Recursive function to keep calculating until exited
         }
 
         if (opInput == 3) {
             TwoVars();
-            saveValueOfMathOp(Math.OPERATOR.MULTIPLY);
-            calcAnswer = calculateAnswer();
+            calcControl.saveValueOfMathOp(Math.OPERATOR.MULTIPLY);
+            calcAnswer = calcControl.calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 4) {
             TwoVars();
-            saveValueOfMathOp(Math.OPERATOR.DIVIDE);
-            calcAnswer = calculateAnswer();
+            calcControl.saveValueOfMathOp(Math.OPERATOR.DIVIDE);
+            calcAnswer = calcControl.calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 5) {
             TwoVars();
-            saveValueOfMathOp(Math.OPERATOR.MOD);
-            calcAnswer = calculateAnswer();
+            calcControl.saveValueOfMathOp(Math.OPERATOR.MOD);
+            calcAnswer = calcControl.calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 6) {
             OneVar();
-            saveValueOfMathOp(Math.OPERATOR.SIN);
-            calcAnswer = calculateAnswer();
+            calcControl.saveValueOfMathOp(Math.OPERATOR.SIN);
+            calcAnswer = calcControl.calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 7) {
             OneVar();
-            saveValueOfMathOp(Math.OPERATOR.COS);
-            calcAnswer = calculateAnswer();
+            calcControl.saveValueOfMathOp(Math.OPERATOR.COS);
+            calcAnswer = calcControl.calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 8) {
             OneVar();
-            saveValueOfMathOp(Math.OPERATOR.TAN);
-            calcAnswer = calculateAnswer();
+            calcControl.saveValueOfMathOp(Math.OPERATOR.TAN);
+            calcAnswer = calcControl.calculateAnswer();
             printAnswer();
             setUp();
         }
 
         if (opInput == 9) {
             TwoVars();
-            saveValueOfMathOp(Math.OPERATOR.POWER);
-            calcAnswer = calculateAnswer();
+            calcControl.saveValueOfMathOp(Math.OPERATOR.POWER);
+            calcAnswer = calcControl.calculateAnswer();
             printAnswer();
             setUp();
         }
@@ -113,26 +114,21 @@ public class CalculatorConsoleUI extends CalculatorContrl {
     public void TwoVars() {
         System.out.println("Enter arg1:");      // User input for arg1
         double var1 = Input.nextDouble();
-        saveValueOfArg1(var1);                  // Sets arg1 in model code
+        calcControl.saveValueOfArg1(var1);                  // Sets arg1 in model code
 
         System.out.println("Enter arg2:");      // User input for arg2
         double var2 = Input.nextDouble();
-        saveValueOfArg2(var2);                  // Sets arg2 in model code
+        calcControl.saveValueOfArg2(var2);                  // Sets arg2 in model code
     }
 
     public void OneVar() {      // Same as above arg saving method but only one arg for single arg operations
         System.out.println("Enter arg1:");
         double var1 = Input.nextDouble();
-        saveValueOfArg1(var1);
+        calcControl.saveValueOfArg1(var1);
     }
 
     public void printAnswer() {     // Prints calcAnswer in string using Print statement
         System.out.println("Answer: "+calcAnswer+"\n");
-    }
-
-    public static void main(String[] args) { // Main method creates object of main class and calls setup recursive method
-        CalculatorConsoleUI calculatorConsole = new CalculatorConsoleUI();
-        calculatorConsole.setUp();
     }
 
 }

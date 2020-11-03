@@ -79,7 +79,7 @@ public class Main extends JFrame {
 
         JMenuItem menuItemTrioCalculator = new JMenuItem("TrioCalculator");
         menuItemTrioCalculator.addActionListener(e -> {
-            CalculatorContrl.main(null);
+            CalculatorMenu.main(null);
         });
         menuCalc.add(menuItemTrioCalculator);
 
