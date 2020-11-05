@@ -44,7 +44,6 @@ public class Main extends JFrame {
         pic.setBounds(377, 111, 128, 128);
 
         // Content Panel to add Label and Image
-        //https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html
         Container content = getContentPane();
         content.setBackground(new Color(147,200,230));
         content.add(pic);
@@ -58,7 +57,7 @@ public class Main extends JFrame {
 
         JMenuItem menuItemBattleship = new JMenuItem("Battleship");
         menuItemBattleship.addActionListener(e -> {
-            BattleshipGUI.main(null);
+            BattleshipControl.main(null);
         });
         menuGames.add(menuItemBattleship);
 
