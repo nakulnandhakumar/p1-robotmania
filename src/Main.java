@@ -9,6 +9,14 @@ import HangbotGame.*;
 import javax.swing.*;
 import java.awt.*;
 
+//image reading
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import javax.imageio.ImageIO;
+
 public class Main extends JFrame {
     private JButton Battleship;
     private JPanel panel1;
@@ -20,6 +28,13 @@ public class Main extends JFrame {
     private JButton Sara_Sanvi_CalcConsole;
     private JLabel mainLabel;
     private JButton ConnectFourButton;
+
+    private JLabel welcome_image;
+    private ImageIcon robotImage;
+    private String projectPath;
+
+
+
 
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
@@ -34,18 +49,38 @@ public class Main extends JFrame {
 
     public Main() {
 
+        {
+            try {
+               projectPath = new File(".").getCanonicalPath();
+            } catch (IOException e) {
+                System.out.println("bruh");
+            }
+        }
+        robotImage = new ImageIcon(projectPath.toString()+"\\images.png");
+
+        if (robotImage != null) {
+            System.out.println("images.png exists");
+        }
+        welcome_image = new JLabel();
+        welcome_image.setPreferredSize(new Dimension(50,50));
+        welcome_image.setIcon(robotImage);
+
+
+        setTitle("P1-RobotMania");
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
 
         // JLabel with image
         JLabel pic = new JLabel("");
-        java.awt.Image image = new ImageIcon("compsci.jpeg").getImage();
-        pic.setIcon(new ImageIcon(image));
-        pic.setBounds(377, 111, 128, 128);
+        pic.setIcon(new ImageIcon(projectPath.toString() + "\\src\\compsci.jpg"));
+        pic.setPreferredSize(new Dimension(50,50));
+        //pic.setBounds(377, 111, 128, 128);
 
         // Content Panel to add Label and Image
         Container content = getContentPane();
         content.setBackground(new Color(147,200,230));
+        //content.add(welcome_image);
         content.add(pic);
 
         // Menu Objects
@@ -94,7 +129,7 @@ public class Main extends JFrame {
         });
         menuCalc.add(menuItemSaraSanviCalcConsole);
 
-        JMenu menuHelloGame = new JMenu("HelloGameStuff");
+        JMenu menuHelloGame = new JMenu("HelloGameSuite");
         menuBar.add(menuHelloGame);
 
         JMenuItem menuItemHelloGame = new JMenuItem("HelloGame");
@@ -109,6 +144,10 @@ public class Main extends JFrame {
         });
         menuHelloGame.add(menuIteRoboPrint);
 
+    }
+
+    public void terminate(JFrame game) {
+        game.dispose();
     }
 }
 
