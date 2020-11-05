@@ -1,21 +1,16 @@
-package HangbotGame;
-// Created by Sanvi Pal
+package Hangman;
 
-import java.util.Scanner;
+import javax.swing.*;
 
-public class HangbotStart extends HangbotPrint {
+class HangmanStart {
 
-    public HangbotStart(){
-
-    }
-
+    /**
     public static void main(String[] args) {
-        // User inh
-        // put
+        // User input
         Scanner kboard = new Scanner(System.in);
 
         // RoboPrint
-        HangbotPrint hangman = new HangbotPrint();
+        RoboPrint hangman = new RoboPrint();
 
 
         // Word List
@@ -43,18 +38,17 @@ public class HangbotStart extends HangbotPrint {
 
             // guessed letters
             String guesses = "";
-            hangman.Printy();
 
             while ((false == word.equals(wordInProgress)) && (nUsedAttempts < MAX_ATTEMPTS)){
-                hangman.Printy(2*(MAX_ATTEMPTS - nUsedAttempts));
-                System.out.println(wordInProgress.replaceAll("_", "_ "));
-                System.out.print("Guess a letter: ");
-                char guess = kboard.next().charAt(0);
-
+                hangman.Printy(2*(MAX_ATTEMPTS - nUsedAttempts), wordInProgress.replaceAll("_", "_ "));
+                //System.out.println(wordInProgress.replaceAll("_", "_ "));
+                //System.out.print("Guess a letter: ");
+                //char guess = kboard.next().charAt(0);
+                char guess = Hangman.getNewLetter();
                 guesses += guess;
 
                 if (-1 != word.indexOf(guess)){
-                    wordInProgress = word.replaceAll("-" + guesses + "-" , "_");
+                    wordInProgress = word.replaceAll("[^" + guesses + "]" , "_");
                 }
                 else{
                     nUsedAttempts++;
@@ -72,5 +66,17 @@ public class HangbotStart extends HangbotPrint {
             choice = kboard.next().charAt(0);
         }
     }
+     */
+
+    public static void main(String[] args) {
+        JFrame frame = new Hangman("Sanvi's Hangman");
+        frame.setVisible(true);
+    }
 }
+
+
+
+
+
+
 

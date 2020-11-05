@@ -1,7 +1,5 @@
 package HelloGame;
 
-import HangbotGame.HangbotGUI;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.Scanner;

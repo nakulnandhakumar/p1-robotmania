@@ -4,7 +4,7 @@ import HelloGame.*;
 import SanviSaraCalculator.CalculatorUI;
 import SanviSaraCalculator.ConsoleBasedUI;
 import TrioCalculator.*;
-import HangbotGame.*;
+import Hangman.*;
 
 import javax.swing.*;
 import java.awt.*;

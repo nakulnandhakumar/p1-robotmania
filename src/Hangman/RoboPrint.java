@@ -1,10 +1,6 @@
-package HangbotGame;
-// Created by Sanvi Pal
+package Hangman;
 
-import javax.swing.*;
-import java.awt.*;
-
-class HangbotPrint {
+class RoboPrint {
 
 
     public  final String ANSI_GREEN = "\u001B[32m";
@@ -48,15 +44,4 @@ class HangbotPrint {
             nLines--;
         }
     }
-
-    public void Printy() {
-        JFrame window = new JFrame("RoboUI");
-        window.setBounds(125,125,220,350);
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel canvas = new HangbotGUI();
-        canvas.setBackground(Color.WHITE);
-        window.getContentPane().add(canvas);
-        window.setVisible(true);
-    }
-
 }
