@@ -7,6 +7,8 @@ import SanviSaraCalculator.CalculatorUI;
 import SanviSaraCalculator.ConsoleBasedUI;
 import TrioCalculator.*;
 import HangbotGame.*;
+import BubbleSort.*;
+import OldReplCode.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -88,7 +90,7 @@ public class Main extends JFrame {
         // Menu Objects
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
-
+/** -----------------------------------------------------------------**/
         JMenu menuGames = new JMenu("Games");
         menuBar.add(menuGames);
 
@@ -109,7 +111,7 @@ public class Main extends JFrame {
             HangbotStart.main(null);
         });
         menuGames.add(menuItemHangbot);
-
+/** -----------------------------------------------------------------**/
         JMenu menuCalc = new JMenu("Calculators");
         menuBar.add(menuCalc);
 
@@ -130,7 +132,7 @@ public class Main extends JFrame {
             ConsoleBasedUI.main(null);
         });
         menuCalc.add(menuItemSaraSanviCalcConsole);
-
+/** -----------------------------------------------------------------**/
         JMenu menuHelloGame = new JMenu("HelloGameSuite");
         menuBar.add(menuHelloGame);
 
@@ -140,12 +142,48 @@ public class Main extends JFrame {
         });
         menuHelloGame.add(menuItemHelloGame);
 
-        JMenuItem menuIteRoboPrint = new JMenuItem("HelloGame");
-        menuIteRoboPrint.addActionListener(e -> {
+        JMenuItem menuItemRoboPrint = new JMenuItem("RobotPrint");
+        menuItemRoboPrint.addActionListener(e -> {
             RoboPrint.main(null);
         });
-        menuHelloGame.add(menuIteRoboPrint);
+        menuHelloGame.add(menuItemRoboPrint);
+/** -----------------------------------------------------------------**/
+        JMenu menuBubbleSort = new JMenu("BubbleSort");
+        menuBar.add(menuBubbleSort);
 
+        JMenuItem menuItemStudent = new JMenuItem("BubbleSort");
+        menuItemStudent.addActionListener(e -> {
+            Student.main(null);
+        });
+        menuBubbleSort.add(menuItemStudent);
+/** -----------------------------------------------------------------**/
+        JMenu menuReplCode = new JMenu("Old Repl Code");
+        menuBar.add(menuReplCode);
+
+        JMenuItem menuItemRobotBank = new JMenuItem("Robot Bank");
+        menuItemRobotBank.addActionListener(e -> {
+            RobotBank.main(null);
+        });
+        menuReplCode.add(menuItemRobotBank);
+
+        JMenuItem menuItemRoboScramble = new JMenuItem("Robo Scramble");
+        menuItemRoboScramble.addActionListener(e -> {
+            RoboScramble.main(null);
+        });
+        menuReplCode.add(menuItemRoboScramble);
+
+        JMenuItem menuItemMadlibs = new JMenuItem("Madlibs");
+        menuItemMadlibs.addActionListener(e -> {
+            Madlibs.main(null);
+        });
+        menuReplCode.add(menuItemMadlibs);
+
+        JMenuItem menuItemLoopy = new JMenuItem("Loopy");
+        menuItemLoopy.addActionListener(e -> {
+            Loopy.main(null);
+        });
+        menuReplCode.add(menuItemLoopy);
+/** -----------------------------------------------------------------**/
     }
 
     public void terminate(JFrame game) {
