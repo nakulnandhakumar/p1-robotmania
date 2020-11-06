@@ -1,3 +1,5 @@
+package Main;
+
 import BattleshipGame.*;
 import ConnectFourGame.ConnectFourUI;
 import HelloGame.*;
