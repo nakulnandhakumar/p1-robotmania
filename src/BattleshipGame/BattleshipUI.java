@@ -1,6 +1,7 @@
 package BattleshipGame;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class BattleshipUI {
     public JPanel panel1;
@@ -84,6 +85,8 @@ public class BattleshipUI {
     private JButton button68;
     private JButton button78;
     private JButton button88;
+
+
 
     public BattleshipUI(BattleshipControl battleshipControl){
         button11.addActionListener(e -> {           //here starts all the 64 button definitions and activation methods
@@ -277,7 +280,25 @@ public class BattleshipUI {
         });
         button88.addActionListener(e -> {
             battleshipControl.game(button88.getText(), button88);
+
         });
+
+        x1.setForeground(Color.WHITE);
+        x2.setForeground(Color.GREEN);
+        x3.setForeground(Color.GREEN);
+        x4.setForeground(Color.GREEN);
+        x5.setForeground(Color.GREEN);
+        x6.setForeground(Color.GREEN);
+        x7.setForeground(Color.GREEN);
+        x8.setForeground(Color.GREEN);
+        y1.setForeground(Color.GREEN);
+        y2.setForeground(Color.GREEN);
+        y3.setForeground(Color.GREEN);
+        y4.setForeground(Color.GREEN);
+        y5.setForeground(Color.GREEN);
+        y6.setForeground(Color.GREEN);
+        y7.setForeground(Color.GREEN);
+        y8.setForeground(Color.GREEN);
     }
 
 }
