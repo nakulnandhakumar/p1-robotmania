@@ -70,11 +70,11 @@ public class Main extends JFrame {
         });
         menuGames.add(menuItemConnect4);
 
-        JMenuItem menuItemHangbot = new JMenuItem("Hangbot");
-        menuItemHangbot.addActionListener(e -> {
+        JMenuItem menuItemHangman = new JMenuItem("Hangman");
+        menuItemHangman.addActionListener(e -> {
             Hangman.main(null);
         });
-        menuGames.add(menuItemHangbot);
+        menuGames.add(menuItemHangman);
 
         JMenu menuCalc = new JMenu("Calculators");
         menuBar.add(menuCalc);
