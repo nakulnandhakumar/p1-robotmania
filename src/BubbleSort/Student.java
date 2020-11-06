@@ -1,15 +1,14 @@
 package BubbleSort;// Created by Nakul w/ help from Mr. Mortensen
-import java.util.Scanner;
+import java.util.*;
 import java.util.ArrayList;
 
 public class Student extends Person {
     int grade;
     public Student() {
-
 	  }
 
     public Student(String fname, String lname, int grade) { //General Student constructor
-      this.gradeSetter(fname, lname, grade);
+        this.gradeSetter(fname, lname, grade);
 	  }
 
     protected void gradeSetter(String fname, String lname, int grade) { // student setter method
@@ -26,11 +25,15 @@ public class Student extends Person {
   //  1. Added grade to Student class
   //  2. Made setter to support student grade
   //  3. Override Person toString to support grade
+
     public static void main(String[] args) {    //main method 
-        ArrayList<Student> studentInfo = new ArrayList<Student>();
+        Stack<Student> studentInfo = new Stack();
         Scanner input = new Scanner(System.in);
+        Student student; //new student object
 
         int totalStudents;
+        int exitFlag = 0;
+        String catchBlankSpace;
 
         System.out.print("Input the total number of students you wish to add: ");
         totalStudents = input.nextInt();
@@ -39,27 +42,36 @@ public class Student extends Person {
         String[] studentLastName = new String[totalStudents];
         int[] studentGrades = new int[totalStudents];
 
-        for (int i = 0; i < totalStudents; i ++) {      //Based on inputted # of students, loops through and adds same number of students by calling Students(); constructor 'i' times
-          System.out.print("Student first name: ");
-          String catchBlankSpace = input.nextLine();
-          studentFirstName[i] = input.nextLine();
+        for (int i = 0; i < totalStudents; i++) {      //Based on inputted # of students, loops through and adds same number of students by calling Students(); constructor 'i' times
+            System.out.print("Student first name: ");
+            if (exitFlag == 0){
+                catchBlankSpace = input.nextLine();
+                exitFlag = 1;
+            }
+            studentFirstName[i] = input.nextLine();
 
-          System.out.print("Student last name: ");
-          studentLastName[i] = input.nextLine();
+            System.out.print("Student last name: ");
+            studentLastName[i] = input.nextLine();
 
-          System.out.print("Student grade: ");
-          studentGrades[i] = input.nextInt();
-        }
+            System.out.print("Student grade: ");
+            studentGrades[i] = input.nextInt();
 
-        for (int k = 0; k < totalStudents; k++) {
-          Student student; //new student object
-          student = new Student(studentFirstName[k], studentLastName[k], studentGrades[k]); 
-          studentInfo.add(student);  //Adds student info to list
+            student = new Student(studentFirstName[i], studentLastName[i], studentGrades[i]);
+            studentInfo.push(student);  //Adds student info to list
+
+            System.out.print("Would you like to delete the student you just entered? (Y/N): ");
+            catchBlankSpace = input.nextLine();
+            String userDeleteAnswer = input.nextLine();
+            if (userDeleteAnswer.equals("Y")) {
+                System.out.print("Student Number "+i+" has been deleted"+"\n");
+                studentInfo.pop();
+                i--;
+            }
         }
 
         System.out.print("\n");               
         for(Student s: studentInfo) {    //For each loop cycles through arraylist positions and prints all informtion of student in that position
-          System.out.println(s);
+            System.out.println(s);
         }
 
         for (int j = 0; j < studentInfo.size(); j++) {  //nested loops for bubble sort
@@ -81,13 +93,6 @@ public class Student extends Person {
 
       System.out.print("\n");               
       for(Student s: studentInfo) {    //For each loop cycles through arraylist positions and prints all informtion of student in that position
-          System.out.println(s);
-      }
-
-      studentInfo.remove(0); //removes student from first element of arraylist after sort
-
-      System.out.print("\n");               
-      for(Student s: studentInfo) {  //prints list after removing student
           System.out.println(s);
       }
     }
