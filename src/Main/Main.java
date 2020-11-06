@@ -1,3 +1,5 @@
+package Main;
+
 import BattleshipGame.*;
 import ConnectFourGame.ConnectFourUI;
 import HelloGame.*;
@@ -9,6 +11,13 @@ import Hangman.*;
 
 import javax.swing.*;
 import java.awt.*;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import javax.imageio.ImageIO;
 
 public class Main extends JFrame {
     private JButton Battleship;
@@ -22,6 +31,13 @@ public class Main extends JFrame {
     private JLabel mainLabel;
     private JButton ConnectFourButton;
 
+
+    private JLabel welcome_image;
+    private ImageIcon robotImage;
+    private String projectPath;
+
+    private String imagePath = "src\\compsci.jpg";
+
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
             try {
@@ -34,20 +50,39 @@ public class Main extends JFrame {
     }
 
     public Main() {
+        // JLabel with image
+
+        {
+            try {
+                projectPath = new File(".").getCanonicalPath();
+            } catch (IOException e) {
+                System.out.println("bruh");
+             }
+        }
+
+        // Content Panel to add Label and Imagea
+        robotImage = new ImageIcon(projectPath.toString()+"\\src\\compsci.jpg");
+
+        if (robotImage != null) {
+            System.out.println("images.png exists");
+        }
+
+        welcome_image = new JLabel();
+        welcome_image.setIcon(robotImage);
+
+
+
+        Container content = getContentPane();
+        content.setBackground(new Color(147,200,230));
+        content.add(welcome_image);
+
+        setTitle("P1-RobotMania");
+
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
 
-        // JLabel with image
-        JLabel pic = new JLabel("");
-        java.awt.Image image = new ImageIcon("compsci.jpeg").getImage();
-        pic.setIcon(new ImageIcon(image));
-        pic.setBounds(377, 111, 128, 128);
 
-        // Content Panel to add Label and Image
-        Container content = getContentPane();
-        content.setBackground(new Color(147,200,230));
-        content.add(pic);
 
         // Menu Objects
         JMenuBar menuBar = new JMenuBar();
@@ -68,11 +103,11 @@ public class Main extends JFrame {
         });
         menuGames.add(menuItemConnect4);
 
-        JMenuItem menuItemHangbot = new JMenuItem("Hangbot");
-        menuItemHangbot.addActionListener(e -> {
+        JMenuItem menuItemHangman = new JMenuItem("Hangman");
+        menuItemHangman.addActionListener(e -> {
             Hangman.main(null);
         });
-        menuGames.add(menuItemHangbot);
+        menuGames.add(menuItemHangman);
 
         JMenu menuCalc = new JMenu("Calculators");
         menuBar.add(menuCalc);
