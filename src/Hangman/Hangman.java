@@ -5,11 +5,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Hangman extends JFrame{
-    private JPanel mainPanel;
     private JLabel RobotIcon;
     private JLabel WordProgress;
     private JLabel Guess;
     private JTextField Letter;
+    private JPanel mainPanel;
 
     private char guess;
 
@@ -131,4 +131,10 @@ public class Hangman extends JFrame{
             }
         }
     }
+
+    public static void main(String[] args) {
+        JFrame frame = new Hangman("Sanvi's Hangman");
+        frame.setVisible(true);
+    }
+
 }

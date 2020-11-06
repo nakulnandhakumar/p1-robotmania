@@ -6,6 +6,7 @@ import SanviSaraCalculator.ConsoleBasedUI;
 import TrioCalculator.*;
 import Hangman.*;
 
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -69,7 +70,7 @@ public class Main extends JFrame {
 
         JMenuItem menuItemHangbot = new JMenuItem("Hangbot");
         menuItemHangbot.addActionListener(e -> {
-            HangbotStart.main(null);
+            Hangman.main(null);
         });
         menuGames.add(menuItemHangbot);
 

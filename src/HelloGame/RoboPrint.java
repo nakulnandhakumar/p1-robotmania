@@ -52,7 +52,7 @@ public class RoboPrint {
     }
     //Same as before but uses function overloading to only print robot for hangman
     public void Printy(int nLines) {
-
+        /*
         for (int i = 0; i < robot[0].length && 0 != nLines; i++) {
             System.out.println(ANSI_GREEN + robot[0][i] + ANSI_RESET);
             nLines--;
@@ -63,13 +63,14 @@ public class RoboPrint {
         JPanel canvas = new Hangman();
         canvas.setBackground(Color.WHITE);
         window.getContentPane().add(canvas);
-        window.setVisible(true);
+        window.setVisible(true); */
     }
+
+
+
     public static void main(String[] args) {
         System.out.println("Hello");
         RoboPrint t = new RoboPrint();
         t.Printy(13);
-
     }
-
 }
