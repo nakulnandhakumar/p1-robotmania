@@ -3,6 +3,9 @@ package HelloGame;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
 
 
 public class HelloGameGUI extends JFrame{
@@ -55,8 +58,6 @@ public class HelloGameGUI extends JFrame{
                     ans[questionnum] = Letter.getText();
                 }
 
-                System.out.println(ans.length);
-
                 next();
             }
         });
@@ -99,6 +100,34 @@ public class HelloGameGUI extends JFrame{
 
 
                 break;
+
+            case (5):
+                WordProgress.setText("Do you want to save your answers?");
+                Letter.setText("");
+                Guess.setText("Enter answer as Y to save");
+                break;
+
+            case (6):
+
+                if (Letter.getText().equals("y")){
+                    try{
+                        //Creates a new file and iterates through the answers array to save the answers to the file
+                        FileWriter myWriter = new FileWriter("answers.txt");
+                        for (int i = 0; i < ans.length; i++){
+                            myWriter.write(questions[i] + ": " + ans[i] + "\n");
+
+                        }
+                        myWriter.close();
+                        System.out.println("Logged Succesfully");
+                    }
+                    catch (IOException e) {
+                        System.out.println("An error occurred.");
+                        e.printStackTrace();
+                    }
+
+                } else {
+                    System.out.println(Letter.getText().equals("y"));
+                }
 
             default:
                 WordProgress.setText("Have fun!");
