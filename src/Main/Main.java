@@ -51,7 +51,6 @@ public class Main extends JFrame {
 
     public Main() {
         // JLabel with image
-
         {
             try {
                 projectPath = new File(".").getCanonicalPath();
@@ -70,14 +69,11 @@ public class Main extends JFrame {
         welcome_image = new JLabel();
         welcome_image.setIcon(robotImage);
 
-
-
         Container content = getContentPane();
         content.setBackground(new Color(147,200,230));
         content.add(welcome_image);
 
         setTitle("P1-RobotMania");
-
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
