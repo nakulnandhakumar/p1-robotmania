@@ -20,35 +20,24 @@ public class ConsoleBasedUI {
         System.out.println("12 - Csc");
         System.out.println("13 - Cot");
         Scanner kboard = new Scanner(System.in);
-        int operation = kboard.nextInt();
-        if (operation <= 5){
+        ArgData d = new ArgData();
+        d.setOp(kboard.nextInt());
+        if (d.getOp() <= 5){
             System.out.println("What is your first argument?");
             Scanner kboard1 = new Scanner(System.in);
-            int fArgument = kboard1.nextInt();
+            d.setArg1(kboard1.nextInt());
             System.out.println("What is your second argument?");
             Scanner kboard2 = new Scanner(System.in);
-            int sArgument = kboard2.nextInt();
-            new doubleargOp().doubleargOp(fArgument, operation, sArgument);
-            doubleargOp a = new doubleargOp();
-            a.doubleargOp(fArgument, operation, sArgument);
-            System.out.println(a.doubleargOp(fArgument, operation, sArgument));
+            d.setArg2(kboard2.nextInt());
+            System.out.println(new ArgOp().doOp(d, 2));
         }
         else{
             System.out.println("What is your argument?");
             Scanner kboard1 = new Scanner(System.in);
-            int fArgument = kboard1.nextInt();
-            new singleArgOp().singleArgOp(fArgument , operation);
-            singleArgOp a = new singleArgOp();
-            a.singleArgOp(fArgument, operation);
-            System.out.println(a.singleArgOp(fArgument, operation));
+            d.setArg1(kboard1.nextInt());
+            System.out.println(new ArgOp().doOp(d, 1));
 
         }
-
-
-
-
-
-
     }
 
 }

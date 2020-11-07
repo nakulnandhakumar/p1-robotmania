@@ -5,8 +5,6 @@
 
 package SanviSaraCalculator;
 
-import SanviSaraCalculator.Math.OPERATOR;
-
 import javax.swing.*; // These items are necessary to run the code; contain UI info
 import javax.swing.border.MatteBorder;
 import java.awt.*;
@@ -19,7 +17,7 @@ public class CalculatorUI extends JFrame {
 
     private boolean initialCalcAreaInputState;
     private STATE mathState;
-    private OPERATOR mathOp;
+    private Math.OPERATOR mathOp;
     private double arg1;
     private double arg2;
     private double calcAnswer;
@@ -70,7 +68,7 @@ public class CalculatorUI extends JFrame {
 
     }
 
-    private void saveValueOfMathOp(OPERATOR op) {
+    private void saveValueOfMathOp(Math.OPERATOR op) {
         this.mathOp = op;
     } // This is where the operation is stored.
 
@@ -296,7 +294,7 @@ public class CalculatorUI extends JFrame {
         });
         button_plus.addActionListener((e) -> {
             this.saveValueOfArg1();
-            this.saveValueOfMathOp(OPERATOR.PLUS);
+            this.saveValueOfMathOp(Math.OPERATOR.PLUS);
         });
         button_plus.setOpaque(true);
         button_plus.setForeground(Color.BLACK);
@@ -316,7 +314,7 @@ public class CalculatorUI extends JFrame {
         });
         button_minus.addActionListener((e) -> {
             this.saveValueOfArg1();
-            this.saveValueOfMathOp(OPERATOR.MINUS);
+            this.saveValueOfMathOp(Math.OPERATOR.MINUS);
         });
         button_minus.setOpaque(true);
         button_minus.setForeground(Color.BLACK);
@@ -338,7 +336,7 @@ public class CalculatorUI extends JFrame {
         });
         button_modulus.addActionListener((e) -> {
             this.saveValueOfArg1();
-            this.saveValueOfMathOp(OPERATOR.MODULUS);
+            this.saveValueOfMathOp(Math.OPERATOR.MODULUS);
         });
         button_modulus.setOpaque(true);
         button_modulus.setForeground(Color.BLACK);

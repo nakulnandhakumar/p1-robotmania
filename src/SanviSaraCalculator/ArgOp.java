@@ -2,7 +2,16 @@ package SanviSaraCalculator;
 
 import java.lang.Math;
 
-public class singleArgOp {
+public class ArgOp {
+    public double doOp(ArgData arg, int opType) {
+        if (1 == opType){
+            return singleArgOp(arg.getArg1(), arg.getOp());
+        }
+        else {
+            return doubleArgOp(arg.getArg1(), arg.getArg2(), arg.getOp());
+        }
+    }
+
     public double singleArgOp(int arg1, int op) {
         double answer2;
         switch (op) {
@@ -34,5 +43,31 @@ public class singleArgOp {
                 answer2 = arg1;
         }
         return answer2;
+    }
+
+    public double doubleArgOp(int arg1, int op, int arg2) {
+        double answer;
+        switch (op) {
+            case (1):
+                answer = arg1 + arg2;
+                break;
+            case (2):
+                answer = arg1 - arg2;
+                break;
+            case (3):
+                answer = arg1 * arg2;
+                break;
+            case (4):
+                answer = arg1 / arg2;
+                break;
+            case (5):
+                answer = arg1 % arg2;
+                break;
+            default:
+                answer = arg1;
+
+
+        }
+        return answer;
     }
 }
