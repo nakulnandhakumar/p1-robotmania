@@ -57,7 +57,6 @@ public class HelloGameGUI extends JFrame{
                 if (questionnum < 5){
                     ans[questionnum] = Letter.getText();
                 }
-
                 next();
             }
         });
