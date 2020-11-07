@@ -117,7 +117,6 @@ public class BattleshipControl extends JFrame {
             int m = JOptionPane.showOptionDialog(new JFrame(), "Winner!","Winner", JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null, new Object[] {"OK"},JOptionPane.OK_OPTION);
             this.setVisible(false);
             this.dispose();
-
         }
 
         System.out.println("GameBoard");     //prints enemy board
