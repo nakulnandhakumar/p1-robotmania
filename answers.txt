@@ -1,0 +1,5 @@
+Q1: What's your first name?: Yasaswi
+Q2: How are you feeling today?: Happy
+Q3: What's your favorite color?: Blue
+Q4: Whats your favorite animal?: Horse
+Q5: Did you have fun?: Yes
