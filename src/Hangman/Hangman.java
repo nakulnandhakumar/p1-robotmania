@@ -76,7 +76,7 @@ public class Hangman extends JFrame{
 
             switch (MAX_ATTEMPTS - nUsedAttempts) {
                 case (5):
-                    RobotIcon.setIcon(new ImageIcon("image100.png"));
+                    RobotIcon.setIcon(new ImageIcon("Hangman/image100.png"));
                     if (true == word.equals(wordInProgress)) {
                         Letter.setText("You Won!!!");
                     }
@@ -85,7 +85,7 @@ public class Hangman extends JFrame{
                     }
                     break;
                 case (4):
-                    RobotIcon.setIcon(new ImageIcon("image80.png"));
+                    RobotIcon.setIcon(new ImageIcon("Hangman/image80.png"));
                     if (true == word.equals(wordInProgress)) {
                         Letter.setText("You Won!!!");
                     }
@@ -95,7 +95,7 @@ public class Hangman extends JFrame{
                     Letter.setText("");
                     break;
                 case (3):
-                    RobotIcon.setIcon(new ImageIcon("image60.png"));
+                    RobotIcon.setIcon(new ImageIcon("Hangman/image60.png"));
                     if (true == word.equals(wordInProgress)) {
                         Letter.setText("You Won!!!");
                     }
@@ -105,7 +105,7 @@ public class Hangman extends JFrame{
                     Letter.setText("");
                     break;
                 case (2):
-                    RobotIcon.setIcon(new ImageIcon("image40.png"));
+                    RobotIcon.setIcon(new ImageIcon("Hangman/image40.png"));
                     if (true == word.equals(wordInProgress)) {
                         Letter.setText("You Won!!!");
                     }
@@ -115,7 +115,7 @@ public class Hangman extends JFrame{
                     Letter.setText("");
                     break;
                 case (1):
-                    RobotIcon.setIcon(new ImageIcon("image20.png"));
+                    RobotIcon.setIcon(new ImageIcon("Hangman/image20.png"));
                     if (true == word.equals(wordInProgress)) {
                         Letter.setText("You Won!!!");
                     }
@@ -125,7 +125,7 @@ public class Hangman extends JFrame{
                     Letter.setText("");
                     break;
                 default:
-                    RobotIcon.setIcon(new ImageIcon("image00.png"));
+                    RobotIcon.setIcon(new ImageIcon("Hangman/image00.png"));
                     Letter.setText("You LOST!!!");
                     break;
             }

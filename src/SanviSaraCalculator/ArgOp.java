@@ -1,18 +1,22 @@
+//Console Based Calculator Created by Sanvi
+//Control
+
 package SanviSaraCalculator;
 
 import java.lang.Math;
 
+//AP req- class for control
 public class ArgOp {
     public double doOp(ArgData arg, int opType) {
         if (1 == opType){
-            return singleArgOp(arg.getArg1(), arg.getOp());
+            return singleArgOp(arg.getArg1(), (int) arg.getOp());
         }
         else {
-            return doubleArgOp(arg.getArg1(), arg.getArg2(), arg.getOp());
+            return doubleArgOp(arg.getArg1(), (int) arg.getArg2(), arg.getOp());
         }
     }
 
-    public double singleArgOp(int arg1, int op) {
+    public double singleArgOp(double arg1, int op) {
         double answer2;
         switch (op) {
             case (6):
@@ -45,7 +49,7 @@ public class ArgOp {
         return answer2;
     }
 
-    public double doubleArgOp(int arg1, int op, int arg2) {
+    public double doubleArgOp(double arg1, int op, double arg2) {
         double answer;
         switch (op) {
             case (1):
