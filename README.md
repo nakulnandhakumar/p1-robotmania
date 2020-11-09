@@ -1,11 +1,11 @@
 
 # P1-ROBOTMANIA PROJECT
 
-# Overview of Project
+## Overview of Project
 
 This readme entails both information about our project as well as our progress throughout this week. As an overview, our project focuses on incorporating UI into games such as Battleship, Connect Four, and Hangman to provide an interactive appeal to the user. Instead of playing games on the console, they can use a more user-friendly version with simple to understand buttons, intriguing graphics, and vivid colors. Each member has made sure to make their own mark on the project, through the multiple games the user can choose from.
 
-# Project Highlights
+## Project Highlights
 
 **Battleship:** Are you a fan of the classic two person game? Well here is our twist of the game using Java! In this code, you can choose buttons to hit at your opponents targets. Additionally, our easy to use interface makes the game much more simple and enjoyable.
 
@@ -17,14 +17,14 @@ This readme entails both information about our project as well as our progress t
 
 **HelloGame** As part of our IntelliJ projects, we wanted to move over some of our old console UI code into our IntelliJ platform and see if we could incorporate some UI based elements inside it. This is just some testing and experimenting we have done with GUIs for learning purposes using HelloGame as an example.
 
-# How to run our code:
+## How to run our code:
 - Go to the Main.java file in our project
 - To run our code, click the green play button next to the class name on line eleven
 - That will open up a GUI window with buttons that have the names of the different files of the project
 - clicking one of the buttons will run the corresponding file from our project
 - closing the gui window will quit the entire running project, and you have to click the green play button to run it again
 
-# WEEK 9 UPDATES
+## WEEK 9 UPDATES
 
 | Person | Contributions |
 | ------ | ------------- |
@@ -35,7 +35,7 @@ This readme entails both information about our project as well as our progress t
 | Sara Beniwal|
 
 
-# WEEK 8 (SELF-ADVOCACY WEEK) UPDATES
+## WEEK 8 (SELF-ADVOCACY WEEK) UPDATES
 
 | Self Grade | Person | Contributions |
 | ---------- | ------ | ------------- |
