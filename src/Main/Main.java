@@ -7,30 +7,16 @@ import SanviSaraCalculator.CalculatorUI;
 import SanviSaraCalculator.ConsoleBasedUI;
 import TrioCalculator.*;
 import Hangman.*;
+import OldReplCode.*;
+import BubbleSort.*;
 
 
 import javax.swing.*;
 import java.awt.*;
-
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import javax.imageio.ImageIO;
 
 public class Main extends JFrame {
-    private JButton Battleship;
-    private JPanel panel1;
-    private JButton Hangbot;
-    private JButton TrioCalculator;
-    private JButton Sara_Sanvi_CalcGUI;
-    private JButton RoboPrintButton;
-    private JButton HelloGameButton;
-    private JButton Sara_Sanvi_CalcConsole;
-    private JLabel mainLabel;
-    private JButton ConnectFourButton;
-
 
     private JLabel welcome_image;
     private ImageIcon robotImage;
@@ -39,7 +25,7 @@ public class Main extends JFrame {
     private String imagePath = "src\\compsci.jpg";
 
     public static void main(String[] args) {
-        EventQueue.invokeLater(() -> {
+        EventQueue.invokeLater(() -> {      // Main method instantiates main GUI for user to choose project files from
             try {
                 Main frame = new Main();
                 frame.setVisible(true);
@@ -80,31 +66,38 @@ public class Main extends JFrame {
 
 
 
-        // Menu Objects
+        // Adds Menu Bar to Main Menu GUI
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
+/** -----------------------------------------------------------------**/
+        // Adds MenuDropDown to main menu bar for Games
         JMenu menuGames = new JMenu("Games");
         menuBar.add(menuGames);
 
+        // Adds MenuItem for Battleship Game file
         JMenuItem menuItemBattleship = new JMenuItem("Battleship");
         menuItemBattleship.addActionListener(e -> {
             BattleshipControl.main(null);
         });
         menuGames.add(menuItemBattleship);
 
+        // Adds MenuItem for Connect4 Game file
         JMenuItem menuItemConnect4 = new JMenuItem("Connect4");
         menuItemConnect4.addActionListener(e -> {
             ConnectFourUI.main(null);
         });
         menuGames.add(menuItemConnect4);
 
+        // Adds MenuItem for Hangman Game file
         JMenuItem menuItemHangman = new JMenuItem("Hangman");
         menuItemHangman.addActionListener(e -> {
             Hangman.main(null);
         });
         menuGames.add(menuItemHangman);
+/** -----------------------------------------------------------------**/
 
+        // Adds MenuDropDown to main menu bar for Calculator Projects
         JMenu menuCalc = new JMenu("Calculators");
         menuBar.add(menuCalc);
 
@@ -125,7 +118,9 @@ public class Main extends JFrame {
             ConsoleBasedUI.main(null);
         });
         menuCalc.add(menuItemSaraSanviCalcConsole);
+/** -----------------------------------------------------------------**/
 
+        // Adds MenuDropDown to main menu bar for initial HelloGame code
         JMenu menuHelloGame = new JMenu("HelloGameStuff");
         menuBar.add(menuHelloGame);
 
@@ -140,6 +135,46 @@ public class Main extends JFrame {
             RoboPrint.main(null);
         });
         menuHelloGame.add(menuIteRoboPrint);
+
+/** -----------------------------------------------------------------**/
+        // Adds MenuDropDown to main menu bar for BubbleSort code
+        JMenu menuBubbleSort = new JMenu("BubbleSort");
+        menuBar.add(menuBubbleSort);
+
+        JMenuItem menuItemStudent = new JMenuItem("BubbleSort");
+        menuItemStudent.addActionListener(e -> {
+            Student.main(null);
+        });
+        menuBubbleSort.add(menuItemStudent);
+/** -----------------------------------------------------------------**/
+        // Adds MenuDropDown to main menu bar for Old Repl Portfolio code
+        JMenu menuReplCode = new JMenu("Old Repl Code");
+        menuBar.add(menuReplCode);
+
+        JMenuItem menuItemRobotBank = new JMenuItem("Robot Bank");
+        menuItemRobotBank.addActionListener(e -> {
+            RobotBank.main(null);
+        });
+        menuReplCode.add(menuItemRobotBank);
+
+        JMenuItem menuItemRoboScramble = new JMenuItem("Robo Scramble");
+        menuItemRoboScramble.addActionListener(e -> {
+            RoboScramble.main(null);
+        });
+        menuReplCode.add(menuItemRoboScramble);
+
+        JMenuItem menuItemMadlibs = new JMenuItem("Madlibs");
+        menuItemMadlibs.addActionListener(e -> {
+            Madlibs.main(null);
+        });
+        menuReplCode.add(menuItemMadlibs);
+
+        JMenuItem menuItemLoopy = new JMenuItem("Loopy");
+        menuItemLoopy.addActionListener(e -> {
+            Loopy.main(null);
+        });
+        menuReplCode.add(menuItemLoopy);
+/** -----------------------------------------------------------------**/
 
     }
 }
