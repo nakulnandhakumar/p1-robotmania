@@ -15,10 +15,13 @@ public class BattleshipControl extends JFrame {
     public int boardWidth;
     public int boardLength;
     public int shipNumber;
+
+    // defines objects for model classes
     public Board board;
     public Ship ship;
     public int totalShipLength;
 
+    // defines object for view class and stack for shiplist
     BattleshipUI battleShipUI;
     public Stack<Ship> shipList;
 
@@ -29,12 +32,14 @@ public class BattleshipControl extends JFrame {
         this.boardLength = boardLength;
         this.shipNumber = shipNumber;
 
-        this.board = new Board(boardWidth, boardLength);          //defines boards as object
-        board.createBoard();
+        this.board = new Board(boardWidth, boardLength); // instantiates object of model class Board
+        board.createBoard(); // creates board using model class Board
 
-        this.ship = new Ship();
+        this.ship = new Ship(); // instantiates object of model class Ship
+
+        // Calls method in model class Ship to return info about enemy ships to Stack here in control code
         shipList = ship.addShips(shipNumber, boardWidth, boardLength);
-        totalShipLength = ship.getTotalShipLength();
+        totalShipLength = ship.getTotalShipLength(); // Calls method in model class Ship to calculate total ship length of enemy
 
         this.battleShipUI = new BattleshipUI(this);
         JFrame frame = new JFrame("BattleshipGUI");     // instantiates frame object and uses it activate GUI
@@ -45,7 +50,8 @@ public class BattleshipControl extends JFrame {
     }
 
     public static void main(String[] args) {
-        BattleshipControl control = new BattleshipControl(8 ,8, 3);     //creates object of class battleship to run game and call game methods
+        //creates object of class battleship to create new control object that contains both Model and View objects
+        BattleshipControl control = new BattleshipControl(8 ,8, 3);
         control.setAIShips(control.shipList, control.board);
     }
 
@@ -81,46 +87,48 @@ public class BattleshipControl extends JFrame {
     }
 
 
-    public void game(String string, JButton buttonName) { //main active game method for attacking
+    public void game(String string, JButton buttonName) { //main active recursive game method for attacking
 
-        String strX = string.substring(0,1);  //takes user input and converts it to row column coords
+        String strX = string.substring(0,1);  //takes user input and converts it to row column coordinates
         String strY = string.substring(2);
 
         int X = Integer.parseInt(strX) - 1;
         int Y = Integer.parseInt(strY) - 1;
 
-        int valueOfGuess = board.getPoint(Y,X);
-        board.setPoint(Y,X,2);
+        int valueOfGuess = board.getPoint(Y,X); // gets the value of coordinate inputted from board with enemy ships
+        board.setPoint(Y,X,2); // sets coord value to 2 to represent square already guessed
 
         System.out.print("\033[2J");
 
         switch (valueOfGuess) {
-            //the player guesses the position of an enemy ship
+            // if the value that was gotten from enemy board was one then use hit a ship
             case 1:
                 buttonName.setForeground(Color.RED);
                 buttonName.setBackground(Color.RED);
-                totalShipLength--;
+                totalShipLength--; // Every correct guess reduces enemy total ship length by one
                 break;
-            //the player's guess is empty water
+            //if value from enemy board 0, then player hit empty water
             case 0:
                 //changes the spot on the player's board to "already guessed (represented by 2)"
                 buttonName.setForeground(Color.GRAY);
                 buttonName.setForeground(Color.GRAY);
                 break;
-            //the player guesses a spot they already picked
+            //If value was already 2 when they guessed, then player already guessed that point previously
             case 2:
                 System.out.println("You already attacked that point");
                 break;
         }
-        if (totalShipLength == 0) {
+
+        if (totalShipLength == 0) {   // once totalshiplength hits zero, enemy has no more ship spaces so user wins
             System.out.print("WINNER!\n");
+            // JFrame window created to display winner message and then close the application
             int m = JOptionPane.showOptionDialog(new JFrame(), "Winner!","Winner", JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null, new Object[] {"OK"},JOptionPane.OK_OPTION);
             this.setVisible(false);
             this.dispose();
         }
 
-        System.out.println("GameBoard");     //prints enemy board
-        board.printBoard();
+        System.out.println("GameBoard");
+        board.printBoard();     //prints enemy board with enemy ship locations in console for testing purposes
 
     }
 
