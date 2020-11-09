@@ -27,7 +27,7 @@ public class Student extends Person {
   //  3. Override Person toString to support grade
 
     public static void main(String[] args) {    //main method 
-        Stack<Student> studentInfo = new Stack();
+        Stack<Student> studentInfo = new Stack(); // Stack for storing student information and sorting them
         Scanner input = new Scanner(System.in);
         Student student; //new student object
 
@@ -56,21 +56,22 @@ public class Student extends Person {
             System.out.print("Student grade: ");
             studentGrades[i] = input.nextInt();
 
-            student = new Student(studentFirstName[i], studentLastName[i], studentGrades[i]);
-            studentInfo.push(student);  //Adds student info to list
+            student = new Student(studentFirstName[i], studentLastName[i], studentGrades[i]); // instantiates student object with student information
+            studentInfo.push(student);  //Adds student info to stack using push command
 
             System.out.print("Would you like to delete the student you just entered? (Y/N): ");
             catchBlankSpace = input.nextLine();
             String userDeleteAnswer = input.nextLine();
-            if (userDeleteAnswer.equals("Y")) {
+
+            if (userDeleteAnswer.equals("Y")) { // Delete option given to user
                 System.out.print("Student Number "+i+" has been deleted"+"\n");
-                studentInfo.pop();
-                i--;
+                studentInfo.pop(); // uses pop command for stack to return and purge most recent student added to stack
+                i--; // resets the loop condition
             }
         }
 
         System.out.print("\n");               
-        for(Student s: studentInfo) {    //For each loop cycles through arraylist positions and prints all informtion of student in that position
+        for(Student s: studentInfo) {    //For each loop cycles through arraylist positions and prints all information of student in that position
             System.out.println(s);
         }
 
@@ -81,10 +82,10 @@ public class Student extends Person {
 
             Student first = studentInfo.get(i);       //Gets all information pertaining to student in position i and i+1
             Student second = studentInfo.get(i + 1);
-            grade1 = first.grade;  //Specifically pulls the integer value of what grade their in from all information pertaing to this student in position i and i+1 of arraylist
+            grade1 = first.grade;  //Specifically pulls the integer value of what grade their in from all information pertaining to this student in position i and i+1 of stack
             grade2 = second.grade;
 
-            if (grade1 > grade2) {        //This is the actual bubble sort, tests whether grade value of one indice ahead is greater or not, if greater then swap positions
+            if (grade1 > grade2) {        //This is the actual bubble sort, tests whether grade value of one index ahead is greater or not, if greater then swap positions
                 studentInfo.set(i, second);     //Since we have already assigned the values to variable above, no need for temp variable to store data
                 studentInfo.set(i + 1, first); //Swaps values between positions
             }
@@ -92,7 +93,7 @@ public class Student extends Person {
       }
 
       System.out.print("\n");               
-      for(Student s: studentInfo) {    //For each loop cycles through arraylist positions and prints all informtion of student in that position
+      for(Student s: studentInfo) {    //For each loop cycles through stack positions and prints all information of student in that position
           System.out.println(s);
       }
     }
