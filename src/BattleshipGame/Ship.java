@@ -1,6 +1,6 @@
 package BattleshipGame;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Ship {
     public static enum Orientation {VERTICAL,HORIZONTAL}
@@ -12,7 +12,7 @@ public class Ship {
     public int minShipLength = 2;
 
     //Arraylist that stores ship information
-    public ArrayList<Ship> shipList = new ArrayList<Ship>();
+    public Stack<Ship> shipList = new Stack<Ship>();
     public ArrayList<ArrayList<Integer>> position;
 
     public int length;
@@ -42,7 +42,7 @@ public class Ship {
         this.status = status;
     }
 
-    public ArrayList<Ship> addShips(int shipNumber, int boardWidth, int boardLength) {
+    public Stack<Ship> addShips(int shipNumber, int boardWidth, int boardLength) {
         //adds ships to list (each ship is as large as its number i)
         //this.shipList.add(new Ship(8,Ship.Orientation.HORIZONTAL));
         for (int i = 0; i < shipNumber; i++) {
@@ -50,17 +50,17 @@ public class Ship {
             int tempLength = i + this.minShipLength;
             if (tempLength < boardWidth && tempLength < boardLength) {
                 if (i % 2 == 0) {
-                    this.shipList.add(new Ship(tempLength, Ship.Orientation.VERTICAL));
+                    this.shipList.push(new Ship(tempLength, Ship.Orientation.VERTICAL));
                 }
                 else
                 {
-                    this.shipList.add(new Ship(tempLength, Ship.Orientation.HORIZONTAL));
+                    this.shipList.push(new Ship(tempLength, Ship.Orientation.HORIZONTAL));
                 }
             }
             //calls Ship constructor to initialize ship info using "this." and then adds to arraylist
             else
             {
-                this.shipList.add(new Ship(boardWidth, Ship.Orientation.HORIZONTAL));
+                this.shipList.push(new Ship(boardWidth, Ship.Orientation.HORIZONTAL));
             }
         }
         return shipList;

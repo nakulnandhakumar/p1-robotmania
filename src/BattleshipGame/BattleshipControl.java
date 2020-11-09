@@ -8,7 +8,7 @@ package BattleshipGame;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.*;
 
 public class BattleshipControl extends JFrame {
     // initializing all public class variables
@@ -20,7 +20,7 @@ public class BattleshipControl extends JFrame {
     public int totalShipLength;
 
     BattleshipUI battleShipUI;
-    public ArrayList<Ship> shipList = new ArrayList<Ship>();
+    public Stack<Ship> shipList;
 
 
     //Main constructor
@@ -49,7 +49,7 @@ public class BattleshipControl extends JFrame {
         control.setAIShips(control.shipList, control.board);
     }
 
-    public void setAIShips(ArrayList<Ship> shipList,Board board) { //method for setting enemy ships
+    public void setAIShips(Stack<Ship> shipList,Board board) { //method for setting enemy ships
         int randomY;
         int randomX;
 
