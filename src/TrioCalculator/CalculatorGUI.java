@@ -4,7 +4,7 @@ import TrioCalculator.Math.OPERATOR;
 import javax.swing.*;
 
 public class CalculatorGUI extends JFrame {
-    public JPanel panel1;
+    public JPanel panel1;       /** Definitions for all buttons and labels for GUI **/
     public JButton button_7;
     public JButton button_4;
     public JButton button_1;
@@ -28,29 +28,29 @@ public class CalculatorGUI extends JFrame {
     public JButton button_cos;
     public JButton button_clear;
 
-    private double calcAnswer;
+    private double calcAnswer;  /** Definitions for local GUI variables **/
     private final String calcAreaDefault = "0.0";
     private boolean initialCalcAreaInputState;
 
     public void updateCalcArea(String string) {
-        if (initialCalcAreaInputState) {  // sets text to string on initial key typed
+        if (initialCalcAreaInputState) {  /** sets text to string on initial key typed **/
             calcArea.setText(string);
             initialCalcAreaInputState = false;
-        } else  {                         // concatenates string to end of text subsequent keys typed
+        } else  {                         /** concatenates string to end of text subsequent keys typed **/
             calcArea.setText(calcArea.getText() + string);
         }
     }
 
-    public void initCalcArea() {
+    public void initCalcArea() {    /** method for initializing calculator label when first opened and for clearing **/
         this.initInputState();
         calcArea.setText(calcAreaDefault);
     }
 
-    public void initInputState() {
+    public void initInputState() {  /** method to make sure that the user input replaces original calc label text **/
         initialCalcAreaInputState = true;
     }
 
-    public CalculatorGUI(CalculatorControl calcControl) {
+    public CalculatorGUI(CalculatorControl calcControl) { /** definitions for all button actions **/
         button_1.addActionListener(e -> updateCalcArea(button_1.getText()));
         button_2.addActionListener(e -> updateCalcArea(button_2.getText()));
         button_3.addActionListener(e -> updateCalcArea(button_3.getText()));
@@ -63,8 +63,8 @@ public class CalculatorGUI extends JFrame {
         button_0.addActionListener(e -> updateCalcArea(button_0.getText()));
 
         button_plus.addActionListener(e -> {
-            calcControl.saveValueOfArg1(Double.parseDouble((calcArea.getText())));
-            calcControl.saveValueOfMathOp(Math.OPERATOR.PLUS);
+            calcControl.saveValueOfArg1(Double.parseDouble((calcArea.getText()))); /** Control code saves arg1 value **/
+            calcControl.saveValueOfMathOp(Math.OPERATOR.PLUS); /** Control code saves operator used in calculation **/
         });
 
         button_minus.addActionListener(e -> {
@@ -95,9 +95,9 @@ public class CalculatorGUI extends JFrame {
         button_sin.addActionListener(e -> {
             calcControl.saveValueOfArg1(Double.parseDouble((calcArea.getText())));
             calcControl.saveValueOfMathOp(Math.OPERATOR.SIN);
-
+            /** single op method calls calculation method after first argument entered **/
             calcAnswer = calcControl.calculateAnswer();
-            calcArea.setText(String.valueOf(calcAnswer));
+            calcArea.setText(String.valueOf(calcAnswer)); /** sets calc label to calculated answer **/
         });
 
         button_cos.addActionListener(e -> {
