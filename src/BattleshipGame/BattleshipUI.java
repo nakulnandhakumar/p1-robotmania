@@ -85,7 +85,8 @@ public class BattleshipUI {
     private JButton button68;
     private JButton button78;
     private JButton button88;
-
+    private JLabel TurnsTitleLabel;
+    private JLabel TurnsRemaining;
 
 
     public BattleshipUI(BattleshipControl battleshipControl){ // button action definitions and methods to call
@@ -299,6 +300,20 @@ public class BattleshipUI {
         y6.setForeground(Color.GREEN);
         y7.setForeground(Color.GREEN);
         y8.setForeground(Color.GREEN);
+    }
+
+    public void changeButtonColorRed(JButton buttonName){
+        buttonName.setForeground(Color.RED);
+        buttonName.setBackground(Color.RED);
+    }
+
+    public void changeButtonColorGray(JButton buttonName){
+        buttonName.setForeground(Color.GRAY);
+        buttonName.setBackground(Color.GRAY);
+    }
+
+    public void setTurnsRemaining(int turnsRemaining) {
+        TurnsRemaining.setText(String.valueOf(turnsRemaining));
     }
 
 }

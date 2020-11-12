@@ -20,6 +20,7 @@ public class BattleshipControl extends JFrame {
     public Board board;
     public Ship ship;
     public int totalShipLength;
+    public int turnsRemaining;
 
     // defines object for view class and stack for shiplist
     BattleshipUI battleShipUI;
@@ -40,6 +41,7 @@ public class BattleshipControl extends JFrame {
         // Calls method in model class Ship to return info about enemy ships to Stack here in control code
         shipList = ship.addShips(shipNumber, boardWidth, boardLength);
         totalShipLength = ship.getTotalShipLength(); // Calls method in model class Ship to calculate total ship length of enemy
+        turnsRemaining = totalShipLength*2;
 
         this.battleShipUI = new BattleshipUI(this);
         JFrame frame = new JFrame("BattleshipGUI");     // instantiates frame object and uses it activate GUI
@@ -47,6 +49,8 @@ public class BattleshipControl extends JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true); // actually makes the view pop up on a window
+
+        battleShipUI.setTurnsRemaining(turnsRemaining);
     }
 
     public static void main(String[] args) {
@@ -103,19 +107,23 @@ public class BattleshipControl extends JFrame {
         switch (valueOfGuess) {
             // if the value that was gotten from enemy board was one then use hit a ship
             case 1:
-                buttonName.setForeground(Color.RED);
-                buttonName.setBackground(Color.RED);
+                battleShipUI.changeButtonColorRed(buttonName);
                 totalShipLength--; // Every correct guess reduces enemy total ship length by one
+                turnsRemaining--;  // User has one less turn
+                battleShipUI.setTurnsRemaining(turnsRemaining);
                 break;
             //if value from enemy board 0, then player hit empty water
             case 0:
                 //changes the spot on the player's board to "already guessed (represented by 2)"
-                buttonName.setForeground(Color.GRAY);
-                buttonName.setForeground(Color.GRAY);
+                battleShipUI.changeButtonColorGray(buttonName);
+                turnsRemaining--;
+                battleShipUI.setTurnsRemaining(turnsRemaining);
                 break;
             //If value was already 2 when they guessed, then player already guessed that point previously
             case 2:
                 System.out.println("You already attacked that point");
+                turnsRemaining--;
+                battleShipUI.setTurnsRemaining(turnsRemaining);
                 break;
         }
 
@@ -123,6 +131,14 @@ public class BattleshipControl extends JFrame {
             System.out.print("WINNER!\n");
             // JFrame window created to display winner message and then close the application
             int m = JOptionPane.showOptionDialog(new JFrame(), "Winner!","Winner", JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null, new Object[] {"OK"},JOptionPane.OK_OPTION);
+            this.setVisible(false);
+            this.dispose();
+        }
+
+        if (turnsRemaining == 0) {   // once turnsremaining hits zero, user has no more turns and they lose
+            System.out.print("LOSER!\n");
+            // JFrame window created to display loser message and then close the application
+            int m = JOptionPane.showOptionDialog(new JFrame(), "LOSER!","LOSER", JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null, new Object[] {"OK"},JOptionPane.OK_OPTION);
             this.setVisible(false);
             this.dispose();
         }
