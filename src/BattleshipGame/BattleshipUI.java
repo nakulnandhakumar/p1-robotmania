@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BattleshipUI {
-    public JPanel panel1;       // Battleship GUI button and label definitions
+    public JPanel panel1;
     private JButton button18;
     private JButton button12;
     private JButton button13;
@@ -89,8 +89,8 @@ public class BattleshipUI {
     private JLabel TurnsRemaining;
 
 
-    public BattleshipUI(BattleshipControl battleshipControl){ // button action definitions and methods to call
-        button11.addActionListener(e -> {
+    public BattleshipUI(BattleshipControl battleshipControl){
+        button11.addActionListener(e -> {           //here starts all the 64 button definitions and activation methods
             battleshipControl.game(button11.getText(), button11);
         });
         button12.addActionListener(e -> {
@@ -284,7 +284,7 @@ public class BattleshipUI {
 
         });
 
-        x1.setForeground(Color.GREEN);  // setting colors for the labels for board indices
+        x1.setForeground(Color.WHITE);
         x2.setForeground(Color.GREEN);
         x3.setForeground(Color.GREEN);
         x4.setForeground(Color.GREEN);
@@ -300,24 +300,6 @@ public class BattleshipUI {
         y6.setForeground(Color.GREEN);
         y7.setForeground(Color.GREEN);
         y8.setForeground(Color.GREEN);
-
-
-        TurnsTitleLabel.setForeground(Color.MAGENTA);
-        TurnsRemaining.setForeground(Color.MAGENTA);
-    }
-
-    public void changeButtonColorRed(JButton buttonName){
-        buttonName.setForeground(Color.RED);
-        buttonName.setBackground(Color.RED);
-    }
-
-    public void changeButtonColorGray(JButton buttonName){
-        buttonName.setForeground(Color.GRAY);
-        buttonName.setBackground(Color.GRAY);
-    }
-
-    public void setTurnsRemaining(int turnsRemaining) {
-        TurnsRemaining.setText(String.valueOf(turnsRemaining));
     }
 
 }
