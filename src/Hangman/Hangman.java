@@ -63,6 +63,7 @@ public class Hangman extends JFrame{
     }
 
     private void repaintHangmanUI(){
+        //control statement keeping in track number of attempts
         if ((false == word.equals(wordInProgress)) && (nUsedAttempts < MAX_ATTEMPTS)) {
             guesses += guess;
 
@@ -74,6 +75,7 @@ public class Hangman extends JFrame{
 
             WordProgress.setText(wordInProgress.replaceAll("_", "_ "));
 
+            //switch case decreasing robot size based on wrong answers
             switch (MAX_ATTEMPTS - nUsedAttempts) {
                 case (5):
                     RobotIcon.setIcon(new ImageIcon("./src/Hangman/image100.png"));
