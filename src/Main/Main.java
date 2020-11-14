@@ -1,7 +1,7 @@
 package Main;
 
 import BattleshipGame.*;
-import ConnectFourGame.ConnectFourUI;
+import ConnectFourGame.ConnectFourGUI;
 import HelloGame.*;
 import SanviSaraCalculator.CalculatorUI;
 import SanviSaraCalculator.ConsoleBasedUI;
@@ -85,7 +85,7 @@ public class Main extends JFrame {
         // Adds MenuItem for Connect4 Game file
         JMenuItem menuItemConnect4 = new JMenuItem("Connect4");
         menuItemConnect4.addActionListener(e -> {
-            ConnectFourUI.main(null);
+            ConnectFourGUI.main(null);
         });
         menuGames.add(menuItemConnect4);
 

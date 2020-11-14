@@ -284,7 +284,7 @@ public class BattleshipUI {
 
         });
 
-        x1.setForeground(Color.WHITE);  // setting colors for the labels for board indices
+        x1.setForeground(Color.GREEN);  // setting colors for the labels for board indices
         x2.setForeground(Color.GREEN);
         x3.setForeground(Color.GREEN);
         x4.setForeground(Color.GREEN);
@@ -300,6 +300,10 @@ public class BattleshipUI {
         y6.setForeground(Color.GREEN);
         y7.setForeground(Color.GREEN);
         y8.setForeground(Color.GREEN);
+
+
+        TurnsTitleLabel.setForeground(Color.MAGENTA);
+        TurnsRemaining.setForeground(Color.MAGENTA);
     }
 
     public void changeButtonColorRed(JButton buttonName){
