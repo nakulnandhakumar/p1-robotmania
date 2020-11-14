@@ -69,10 +69,10 @@ public class Board {
 
     public void setPoint(int row, int column, int value) {  //standard method for setting value @ coordinate
         boardArray.get(row).set(column, value);
-    }
+    } // sets specific value to coordinate inputted by user
 
     public int getPoint(int row, int column) {   //gives coordinate so above method can be performed
         return boardArray.get(row).get(column);
-    }
+    } // gets specific value from coordinate inputted y user
 
 }
