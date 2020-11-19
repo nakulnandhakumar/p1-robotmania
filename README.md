@@ -24,6 +24,17 @@ This readme entails both information about our project as well as our progress t
 - clicking one of the buttons will run the corresponding file from our project
 - closing the gui window will quit the entire running project, and you have to click the green play button to run it again
 
+
+## WEEK 9 UPDATES
+
+| Person | Code/Artifacts |
+| ------ | ------------- |
+| Nakul Nandhakumar| - Abstracted method of [button color](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/BattleshipUI.java#L305) change in Battleship from control to view <br> - Added [turn limit](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/BattleshipControl.java#L112) to Battleship <br> - [Abstracted turn limit label updates](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/BattleshipUI.java#L315) to BattleshipUI <br> - Added General Reflections to Journal (3rd entry from the first) <br> - Added Stacks and Queues Entry to journal (second to last entry)
+| Sanvi Pal| 
+| Yasaswi Singamneni| 
+| Vihan Jayaraman|
+| Sara Beniwal|
+
 ## WEEK 9 UPDATES
 
 | Person | Code/Artifacts |
