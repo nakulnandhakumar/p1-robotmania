@@ -25,7 +25,7 @@ This readme entails both information about our project as well as our progress t
 - closing the gui window will quit the entire running project, and you have to click the green play button to run it again
 
 
-## WEEK 9 UPDATES
+## WEEK 10 UPDATES
 
 | Person | Code/Artifacts |
 | ------ | ------------- |
