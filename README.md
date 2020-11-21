@@ -108,7 +108,7 @@
 | Yasaswi Singamneni| 
 | Vihan Jayaraman| <p>COMPLETED:<br />- Added "Winner" dialog to Battleship game<br />- Modified the GUI of Battleship<br />-Discovered how to dynamically create GUI with coding only.</p>
 <p>TO-DO:<br />- Make a two-player mode for Battleship<br />- Create a safe exit function to close Battleship when finished and return to main menu<br />- Improve GUI with icons.</p>
-| Sara Beniwal|
+| Sara Beniwal| - Completed and finalized the [Connect Four UI game](https://github.com/nakulnandhakumar/p1-robotmania/tree/master/src/ConnectFourGame) <br> - Worked on planning out MVC using pseudo code and BlueJ <br> - Created a class to initialize the player’s turn and add action listeners <br> - Created a [main](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/ConnectFourGame/ConnectFourGUI.java) (would serve as control in terms of MVC) to initialize the board <br> - Added an [action performed and mark grid class](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/ConnectFourGame/ConnectFourGUI.java) to establish the “dropper” and the change of colors for each player <br> - Utilized the [ternary operator](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/ConnectFourGame/ConnectFourGUI.java) to alternate turns <br>
 
 
 ## WEEK 8 (SELF-ADVOCACY WEEK) UPDATES
