@@ -32,7 +32,13 @@ This readme entails both information about our project as well as our progress t
 | Nakul Nandhakumar| - Abstracted method of [button color](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/BattleshipUI.java#L305) change in Battleship from control to view <br> - Added [turn limit](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/BattleshipControl.java#L112) to Battleship <br> - [Abstracted turn limit label updates](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/BattleshipUI.java#L315) to BattleshipUI <br> - Added General Reflections to Journal (3rd entry from the first) <br> - Added Stacks and Queues Entry to journal (second to last entry)
 | Sanvi Pal| 
 | Yasaswi Singamneni| 
-| Vihan Jayaraman|
+| Vihan Jayaraman| COMPLETED:
+- Cleaned up GUI of Battleship - Better looking buttons 
+- Added Icons to Battleship.
+
+TO-DO:
+- Add two player mode
+- create safe exit function
 | Sara Beniwal|
 
 ## WEEK 9 UPDATES
@@ -42,7 +48,15 @@ This readme entails both information about our project as well as our progress t
 | Nakul Nandhakumar| -Finished [Model](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/TrioCalculator/CalculatorData.java#L4) for Calc <br> -Instantiated [CalcGUI](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/TrioCalculator/CalculatorControl.java#L16) and [CalcData](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/TrioCalculator/CalculatorControl.java#L15) in CalcControl <br> -Finished [Menu in Control](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/TrioCalculator/CalculatorControl.java#L74) for Calc <br> -Abstracted Models ([Ship](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/Ship.java#L5) model and [Board](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/Board.java#L5) model), [View](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/BattleshipUI.java#L6), and [Control](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/BattleshipControl.java#L13) for Battleship <br> -Implemented Stacks in [BattleshipControl](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/BattleshipControl.java#L26), [Model](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/Ship.java#L46), and [Bubble Sort](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BubbleSort/Student.java#L30) <br> -Added old repl.it project code to project and [main menu](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/Main/Main.java#L150) <br> -Created [executable JAR file](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/out/artifacts/p1_robotmania_jar/main.jar) and tutorial for main class <br> -Created BlueJ code modeling for [Calculator and Battleship](https://docs.google.com/document/d/1vppNjLiFR90s7xUZCyNaEpjVviBTeIO0ZWKb4DkyrbI/edit?usp=sharing) (top image is battleship, bottom image is calculator) <br> <br> **TO-DO** <br> -Add Stacks and Queues entry in journal <br> -Add reflections to journal <br> -Update README with Git, IntelliJ, SwingDesigner, etc., instructions <br> -Add turn limit for battleship
 | Sanvi Pal| 
 | Yasaswi Singamneni| 
-| Vihan Jayaraman|
+| Vihan Jayaraman| COMPLETED:
+- Added "Winner" dialog to Battleship game
+- Modified the GUI of Battleship
+-Discovered how to dynamically create GUI with coding only.
+
+TO-DO:
+- Make a two-player mode for Battleship
+- Create a safe exit function to close Battleship when finished and return to main menu
+- Improve GUI with icons.
 | Sara Beniwal|
 
 
