@@ -23,6 +23,8 @@
 - In class Ship, the enemy ships are created based on the specified amount, each one more unit longer than the other. Other information such as ship lengths and orientation are also initialized here and all of this information is added to a stack called shiplist
 - In the class BattleshipControl, the baord and ship information are received from the model classes and then a method uses the information from the stack shiplist and prints the enemy ships on the enemy board. As the player presses buttons to guess, a recursive method is run to keep checking for hits until the player wins or runs out of turns
 
+![](BattleshipDemoGIF.gif)
+
 ####**Connect Four (Two Player Game):** 
 - Try this UI version of Connect Four! Press buttons that coordinate to certain columns to "drop" your pieces. 
 - Play with a friend and compete to see who will make four in a row first!
@@ -35,6 +37,8 @@
 - Are you tired of your phone's boring calculator? Since you said yes, take a look at our one-of-a-kind and user-friendly calculators!
 - With creative and ingenious M double-V C programming, you can experience the joy of a console or a user interface caluclator that you can freely switch between!
 - Check out TrioCalculator or SaraSanviCalculator if you want to have the most enjoyable calculator ever (Note: In order to experience SaraSanviCalulator Console verison, you will have to end the runtime of the code and choose from the main menu again)
+
+![](CalculatorGIF.gif)
 
 ####**HelloGame** 
 - As part of our IntelliJ projects, we wanted to move over some of our old console UI code into our IntelliJ platform and see if we could incorporate some UI based elements inside it.
