@@ -96,7 +96,7 @@
 | Sanvi Pal| 
 | Yasaswi Singamneni| 
 | Vihan Jayaraman| <p>**COMPLETED:**<br />- Cleaned up GUI of Battleship - Better looking buttons <br />- Added Icons to Battleship <br> <br> **TO-DO:** <br>- Add two player mode<br />- create safe exit function</p> |
-| Sara Beniwal|
+| Sara Beniwal| - Focused on completing the calculator MVC project as well as updating/finalizing our pair share journals <br> - For the calculator MVC, decided to use an [arraylist](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/SanviSaraCalculator/CalculatorGUI.java) to keep the expression and operator strings saved in order to update the calcInput JLabel <br> - Created a CalculatorGUI constructor and classes for updating calcArea, clearing calcArea, and determining the answer <br> - Created the CalculatorOperations class, which had all of the operations but in one place
 
 ## WEEK 9 UPDATES
 
@@ -107,7 +107,7 @@
 | Yasaswi Singamneni| 
 | Vihan Jayaraman| <p>**COMPLETED:**<br />- Added "Winner" dialog to Battleship game<br />- Modified the GUI of Battleship<br />-Discovered how to dynamically create GUI with coding only.</p>
 <p>**TO-DO:**<br />- Make a two-player mode for Battleship<br />- Create a safe exit function to close Battleship when finished and return to main menu<br />- Improve GUI with icons.</p>
-| Sara Beniwal|
+| Sara Beniwal| 
 
 
 ## WEEK 8 (SELF-ADVOCACY WEEK) UPDATES
