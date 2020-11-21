@@ -78,7 +78,7 @@
 
 ## SELF GRADE (25% of Project)
 - Nakul Nandhakumar - 24% (MVP)
-    - **Comments:** A great integrator,patient teacher, always helps his teammates both in an outside of class, really helpful when tackling issues with version control, great with GUI creation, hard worker
+    - **Comments:** A great integrator, patient teacher, always helps his teammates both in an outside of class, really helpful when tackling issues with version control, great with GUI creation, hard worker
 - Vihan Jayaraman - 24%
     - **Comments:** Amazing work for Battleship and other project code logic, especially logic for setting enemy ships and solving overlap issues, helps his teammates when they need help, very focused
 - Sara Beniwal - 24%
