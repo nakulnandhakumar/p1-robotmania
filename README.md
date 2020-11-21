@@ -52,7 +52,7 @@
     - Click the green play button on the left, near the line numbers
     - Once you have run it once, if you want to run it again, just hit the green play button on the right side of the top bar of the IntelliJ Window
     
-- **JAR FILE METHOD** [Tutorial To Creat JAR File](https://docs.google.com/document/d/1FkWllDalq6lbXXn5N-mtvU0xlS8zBNXp2Xo21JkgmDQ/edit?usp=sharing)
+- **JAR FILE METHOD** [Tutorial To Create JAR File](https://docs.google.com/document/d/1FkWllDalq6lbXXn5N-mtvU0xlS8zBNXp2Xo21JkgmDQ/edit?usp=sharing)
     - Open the /out directory on the left
     - Open the /artifacts directory
     - Open the /p1_robotmania_jar directory
