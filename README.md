@@ -95,9 +95,9 @@
 | Nakul Nandhakumar| - Abstracted method of [button color](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/BattleshipUI.java#L305) change in Battleship from control to view <br> - Added [turn limit](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/BattleshipControl.java#L112) to Battleship <br> - [Abstracted turn limit label updates](https://github.com/nakulnandhakumar/p1-robotmania/blob/master/src/BattleshipGame/BattleshipUI.java#L315) to BattleshipUI <br> - Added General Reflections to Journal (3rd entry from the first) <br> - Added Stacks and Queues Entry to journal (second to last entry)
 | Sanvi Pal| 
 | Yasaswi Singamneni| 
+| Sara Beniwal|
 | Vihan Jayaraman| <p>COMPLETED:<br />- Cleaned up GUI of Battleship - Better looking buttons <br />- Added Icons to Battleship.</p>
 <p>TO-DO:<br />- Add two player mode<br />- create safe exit function</p>
-| Sara Beniwal|
 
 ## WEEK 9 UPDATES
 
