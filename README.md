@@ -14,7 +14,7 @@
 
 ## Project Highlights
 
-####**Battleship (One Player Game):** 
+#### **Battleship (One Player Game):** 
 - Are you a fan of the classic two person game? Well here is our twist of the game using Java!
     - Guess where your enemy's ships are placed on a custom GUI and sink them! Beware, you only have a certain amount of guesses before your enemies are alerted!
     - Our easy to use interface makes the game much more simple and enjoyable.
@@ -25,26 +25,26 @@
 
 ![](BattleshipDemoGIF.gif)
 
-####**Connect Four (Two Player Game):** 
+#### **Connect Four (Two Player Game):** 
 - Try this UI version of Connect Four! Press buttons that coordinate to certain columns to "drop" your pieces. 
 - Play with a friend and compete to see who will make four in a row first!
 
-####**Hangbot:** 
+#### **Hangbot:** 
 - A fan of hangman? Check out hangbot, a single player game that will test your guessing ability.
 - With a plethora of words and an engaging UI, you will be sure to enjoy this game!
 
-####**Calculators:** 
+#### **Calculators:** 
 - Are you tired of your phone's boring calculator? Since you said yes, take a look at our one-of-a-kind and user-friendly calculators!
 - With creative and ingenious M double-V C programming, you can experience the joy of a console or a user interface caluclator that you can freely switch between!
 - Check out TrioCalculator or SaraSanviCalculator if you want to have the most enjoyable calculator ever (Note: In order to experience SaraSanviCalulator Console verison, you will have to end the runtime of the code and choose from the main menu again)
 
 ![](CalculatorGIF.gif)
 
-####**HelloGame** 
+#### **HelloGame** 
 - As part of our IntelliJ projects, we wanted to move over some of our old console UI code into our IntelliJ platform and see if we could incorporate some UI based elements inside it.
 - This is just some testing and experimenting we have done with GUIs for learning purposes using HelloGame as an example.
 
-##HOW TO RUN CODE:
+## HOW TO RUN CODE:
 - **MAIN FILE METHOD**
     - Find the /Main directory under the /src directory on the left
     - Open the Main.java file
@@ -62,7 +62,7 @@
     - Type the following: java -jar ***Copied Path***
     - Press "enter" on your keyboard and enjoy!
 
-##RUNTIME GUIDANCE:
+## RUNTIME GUIDANCE:
 - After running the code, a main menu will pop-up
 - If it doesn't look for a new icon appearing on the bottom of your desktop or computer and click it
 - Once the menu is opened, scroll over the tabs at the top of the menu bar and look through the drop down menus for the name of the application you want to run
@@ -72,7 +72,7 @@
 - If the application window is closed and the code hasn't stopped running, do not pick a new application from the menu window and close it to prevent any code from breaking
 - If you want to see another application, run the project again and repeat the previous steps
 
-##SELF GRADE (25% of Project)
+## SELF GRADE (25% of Project)
 - Nakul Nandhakumar - 24% (MVP)
     - **Comments:** A great integrator,patient teacher, always helps his teammates both in an outside of class, really helpful when tackling issues with version control, great with GUI creation, hard worker
 - Vihan Jayaraman - 24%
