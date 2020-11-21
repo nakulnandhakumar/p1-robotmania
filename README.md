@@ -1,29 +1,76 @@
 
 # P1-ROBOTMANIA PROJECT
+- Nakul Nandhakumar - [@nakulnandhakumar](https://github.com/nakulnandhakumar)
+- Vihan Jayaraman  - [@VihanJ](https://github.com/VihanJ)
+- Sara Beniwal - [@saraben21](https://github.com/saraben21)
+- Yasaswi Singamneni - [@YasaswiS](https://github.com/YasaswiS)
+- Sanvi Pal - [@sanvi1855544](https://github.com/sanvi1855544)
 
 ## Overview of Project
 
-This readme entails both information about our project as well as our progress throughout this week. As an overview, our project focuses on incorporating UI into games such as Battleship, Connect Four, and Hangman to provide an interactive appeal to the user. Instead of playing games on the console, they can use a more user-friendly version with simple to understand buttons, intriguing graphics, and vivid colors. Each member has made sure to make their own mark on the project, through the multiple games the user can choose from.
+- As an overview, our project focuses on incorporating UI into games such as Battleship, Connect Four, and Hangman to provide an interactive appeal to the user
+- Instead of playing games on the console, they can use a more user-friendly version with simple to understand buttons, intriguing graphics, and vivid colors. 
+- Each member has made sure to make their own mark on the project, through the multiple games the user can choose from.
 
 ## Project Highlights
 
-**Battleship:** Are you a fan of the classic two person game? Well here is our twist of the game using Java! In this code, you can choose buttons to hit at your opponents targets. Additionally, our easy to use interface makes the game much more simple and enjoyable.
+####**Battleship (One Player Game):** 
+- Are you a fan of the classic two person game? Well here is our twist of the game using Java!
+    - Guess where your enemy's ships are placed on a custom GUI and sink them! Beware, you only have a certain amount of guesses before your enemies are alerted!
+    - Our easy to use interface makes the game much more simple and enjoyable.
+- Battleship uses an MVC code format, however, our Battleship is special because of it's double model relationship, class Board and Class Ship
+- In class Board, the board where the enemy ships will be placed is created using arraylists to create indices
+- In class Ship, the enemy ships are created based on the specified amount, each one more unit longer than the other. Other information such as ship lengths and orientation are also initialized here and all of this information is added to a stack called shiplist
+- In the class BattleshipControl, the baord and ship information are received from the model classes and then a method uses the information from the stack shiplist and prints the enemy ships on the enemy board. As the player presses buttons to guess, a recursive method is run to keep checking for hits until the player wins or runs out of turns
 
-**Connect Four:** Try this UI version of Connect Four! Press buttons that coordinate to certain columns to "drop" your pieces. Play with a friend and compete to see who will make four in a row first! *Please note: Currently a work in progress*
+####**Connect Four (Two Player Game):** 
+- Try this UI version of Connect Four! Press buttons that coordinate to certain columns to "drop" your pieces. 
+- Play with a friend and compete to see who will make four in a row first!
 
-**Hangbot:** A fan of hangman? Check out hangbot, a single player game that will test your guessing ability. With a plethora of words and an engaging UI, you will be sure to enjoy this game! *Please note: Currently a work in progress*
+####**Hangbot:** 
+- A fan of hangman? Check out hangbot, a single player game that will test your guessing ability.
+- With a plethora of words and an engaging UI, you will be sure to enjoy this game!
 
-**Calculators:** As MVC is a key part of this project, we have incorporated the calculators assignment to this readme. Take a look at our calculators, some of which are a work in progress (Sara and Sanvi's. We have almost finished the two versions and are now in the process of connecting them).
+####**Calculators:** 
+- Are you tired of your phone's boring calculator? Since you said yes, take a look at our one-of-a-kind and user-friendly calculators!
+- With creative and ingenious M double-V C programming, you can experience the joy of a console or a user interface caluclator that you can freely switch between!
+- Check out TrioCalculator or SaraSanviCalculator if you want to have the most enjoyable calculator ever (Note: In order to experience SaraSanviCalulator Console verison, you will have to end the runtime of the code and choose from the main menu again)
 
-**HelloGame** As part of our IntelliJ projects, we wanted to move over some of our old console UI code into our IntelliJ platform and see if we could incorporate some UI based elements inside it. This is just some testing and experimenting we have done with GUIs for learning purposes using HelloGame as an example.
+####**HelloGame** 
+- As part of our IntelliJ projects, we wanted to move over some of our old console UI code into our IntelliJ platform and see if we could incorporate some UI based elements inside it.
+- This is just some testing and experimenting we have done with GUIs for learning purposes using HelloGame as an example.
 
-## How to run our code:
-- Go to the Main.java file in our project
-- To run our code, click the green play button next to the class name on line eleven
-- That will open up a GUI window with buttons that have the names of the different files of the project
-- clicking one of the buttons will run the corresponding file from our project
-- closing the gui window will quit the entire running project, and you have to click the green play button to run it again
+## HOW TO RUN CODE:
+- **MAIN FILE METHOD**
+    - Find the /Main directory under the /src directory on the left
+    - Open the Main.java file
+    - Find the main method of the file
+    - Click the green play button on the left, near the line numbers
+    - Once you have run it once, if you want to run it again, just hit the green play button on the right side of the top bar of the IntelliJ Window
+    
+## RUNTIME GUIDANCE:
+    
+- **JAR FILE METHOD**
+    - Open the /out directory on the left
+    - Open the /artifacts directory
+    - Open the /p1_robotmania_jar directory
+    - Right click on the "main.jar" file
+    - Right click, scroll over "Copy", then click "Absolute Path"
+    - Open up the terminal tab at the bottom of the IntelliJ workspace
+    - Type the following: java -jar ***Copied Path***
+    - Press "enter" on your keyboard and enjoy!
 
+## SELF GRADE (25% of Project)
+- Nakul Nandhakumar - 24% (MVP)
+    - **Comments:** A great integrator,patient teacher, always helps his teammates both in an outside of class, really helpful when tackling issues with version control, great with GUI creation, hard worker
+- Vihan Jayaraman - 24%
+    - **Comments:** Amazing work for Battleship and other project code logic, especially logic for setting enemy ships and solving overlap issues, helps his teammates when they need help, very focused
+- Sara Beniwal - 24%
+    - **Comments:** Someone who has really good organization skills, good README layouts, great notetaker, became proficient in java syntax quickly, very hard worker
+- Yasaswi Singamneni - 24%
+    - Comments: A person with great foundations in java, helps the team with java syntax at the beginning of tri, great in integration, very determined and focused
+- Sanvi Pal - 24%
+    - **Comments:** A person who doesn't give up easily, went from knowing almost nothing about java, git, and intellij at the start of tri, to becoming proficient in them now, great learning capacity, always positive
 
 ## WEEK 10 UPDATES
 
