@@ -50,7 +50,7 @@ public class BattleshipControl extends JFrame {
         frame.pack();
         frame.setVisible(true); // actually makes the view pop up on a window
 
-        //battleShipUI.setTurnsRemaining(turnsRemaining);
+        battleShipUI.setTurnsRemaining(turnsRemaining);
     }
 
     public static void main(String[] args) {
@@ -107,23 +107,23 @@ public class BattleshipControl extends JFrame {
         switch (valueOfGuess) {
             // if the value that was gotten from enemy board was one then use hit a ship
             case 1:
-                //battleShipUI.changeButtonColorRed(buttonName);
+                battleShipUI.changeButtonColorRed(buttonName);
                 totalShipLength--; // Every correct guess reduces enemy total ship length by one
                 turnsRemaining--;  // User has one less turn
-                //battleShipUI.setTurnsRemaining(turnsRemaining);
+                battleShipUI.setTurnsRemaining(turnsRemaining);
                 break;
             //if value from enemy board 0, then player hit empty water
             case 0:
                 //changes the spot on the player's board to "already guessed (represented by 2)"
-                //battleShipUI.changeButtonColorGray(buttonName);
+                battleShipUI.changeButtonColorGray(buttonName);
                 turnsRemaining--;
-                //battleShipUI.setTurnsRemaining(turnsRemaining);
+                battleShipUI.setTurnsRemaining(turnsRemaining);
                 break;
             //If value was already 2 when they guessed, then player already guessed that point previously
             case 2:
                 System.out.println("You already attacked that point");
                 turnsRemaining--;
-                //battleShipUI.setTurnsRemaining(turnsRemaining);
+                battleShipUI.setTurnsRemaining(turnsRemaining);
                 break;
         }
 

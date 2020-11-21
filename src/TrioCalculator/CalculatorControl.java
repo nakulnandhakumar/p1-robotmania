@@ -1,11 +1,13 @@
 package TrioCalculator;
 
 import javax.swing.*;
+import javax.swing.border.MatteBorder;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class CalculatorControl extends JFrame { /** Extends JFrame so that GUI library methods can be used **/
-    private JButton GUIButton;   /** Initialize buttons, States, objects, and other variables **/
-    private JPanel panel1;
-    private JButton consoleButton;
+    /** Initialize buttons, States, objects, and other variables **/
     private CalculatorConsoleUI calculatorConsole = new CalculatorConsoleUI();
 
     public enum STATE {INITIAL, SAVE1, SAVE2, CALC}
@@ -13,23 +15,58 @@ public class CalculatorControl extends JFrame { /** Extends JFrame so that GUI l
 
     /** Defines calculator objects for both model and view **/
     CalculatorData model;
-    CalculatorGUI view;
+    CalcUI view;
 
     public CalculatorControl() {
         this.model = new CalculatorData(); /** Instantiates new object model of CalculatorModel class **/
 
-        GUIButton.addActionListener(e -> {  /** Button action to choose CalcGUI **/
-            this.view = new CalculatorGUI(this); /** Using view object of CalculatorGUI class, instantiates GUI **/
-            JFrame calcGUI = new JFrame("CalculatorGUI");
-            calcGUI.setContentPane(view.panel1);
-            calcGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            calcGUI.pack();
-            calcGUI.setVisible(true);
-        });
+        getContentPane().setBackground(new Color(175, 238, 238));
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setBounds(100, 100, 418, 315);
+        getContentPane().setLayout(null);
 
-        consoleButton.addActionListener(e -> { /** Button actions that runs ConsoleUI.main **/
+        JButton button_gui = new JButton("GUI");
+        button_gui.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                button_gui.setBackground(Color.BLACK);
+            }
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                button_gui.setBackground(Color.PINK);
+            }
+        });
+        button_gui.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
+        button_gui.setOpaque(true);
+        button_gui.setForeground(Color.WHITE);
+        button_gui.setBackground(Color.PINK);
+        button_gui.addActionListener(e -> {
+            this.view = new CalcUI(this); /** Using view object of CalculatorGUI class, instantiates GUI **/
+            view.setVisible(true);
+        });
+        button_gui.setBounds(35, 86, 75, 40);
+        getContentPane().add(button_gui);
+
+        JButton button_console = new JButton("CONSOLE");
+        button_console.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                button_console.setBackground(Color.BLACK);
+            }
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                button_console.setBackground(Color.PINK);
+            }
+        });
+        button_console.addActionListener(e -> {
             calculatorConsole.setUp();
         });
+        button_console.setOpaque(true);
+        button_console.setForeground(Color.WHITE);
+        button_console.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
+        button_console.setBackground(Color.PINK);
+        button_console.setBounds(122, 86, 75, 40);
+        getContentPane().add(button_console);
     }
 
     public double calculateAnswer()  /** asks model class to calculate answer with saved values below and return answer **/
@@ -66,10 +103,8 @@ public class CalculatorControl extends JFrame { /** Extends JFrame so that GUI l
     } /** method to refresh all variables by creating new model object and using view object to clear calculator **/
 
     public static void main(String[] args) {
-        JFrame calcMenu = new JFrame("CalculatorMenu");
-        calcMenu.setContentPane(new CalculatorControl().panel1);
-        calcMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        calcMenu.pack();
-        calcMenu.setVisible(true);
+        CalculatorControl calcSetUp = new CalculatorControl();
+        calcSetUp.setVisible(true);
     } /** main menu to set CalcMenu visible so User can choose if they want to use ConsoleMenu or the GUI **/
 }
+

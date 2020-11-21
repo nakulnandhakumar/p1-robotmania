@@ -302,4 +302,18 @@ public class BattleshipUI {
         y8.setForeground(Color.GREEN);
     }
 
+    public void changeButtonColorRed(JButton buttonName){
+        buttonName.setForeground(Color.RED);
+        buttonName.setBackground(Color.RED);
+    }
+
+    public void changeButtonColorGray(JButton buttonName){
+        buttonName.setForeground(Color.GRAY);
+        buttonName.setBackground(Color.GRAY);
+    }
+
+    public void setTurnsRemaining(int turnsRemaining) {
+        TurnsRemaining.setText(String.valueOf(turnsRemaining));
+    }
+
 }
