@@ -40,15 +40,13 @@
 - As part of our IntelliJ projects, we wanted to move over some of our old console UI code into our IntelliJ platform and see if we could incorporate some UI based elements inside it.
 - This is just some testing and experimenting we have done with GUIs for learning purposes using HelloGame as an example.
 
-## HOW TO RUN CODE:
+##HOW TO RUN CODE:
 - **MAIN FILE METHOD**
     - Find the /Main directory under the /src directory on the left
     - Open the Main.java file
     - Find the main method of the file
     - Click the green play button on the left, near the line numbers
     - Once you have run it once, if you want to run it again, just hit the green play button on the right side of the top bar of the IntelliJ Window
-    
-## RUNTIME GUIDANCE:
     
 - **JAR FILE METHOD**
     - Open the /out directory on the left
@@ -60,7 +58,17 @@
     - Type the following: java -jar ***Copied Path***
     - Press "enter" on your keyboard and enjoy!
 
-## SELF GRADE (25% of Project)
+##RUNTIME GUIDANCE:
+- After running the code, a main menu will pop-up
+- If it doesn't look for a new icon appearing on the bottom of your desktop or computer and click it
+- Once the menu is opened, scroll over the tabs at the top of the menu bar and look through the drop down menus for the name of the application you want to run
+- Once the application is found, click it
+- You will be brought to the start of the application
+- Once completed with the application, close the application window
+- If the application window is closed and the code hasn't stopped running, do not pick a new application from the menu window and close it to prevent any code from breaking
+- If you want to see another application, run the project again and repeat the previous steps
+
+##SELF GRADE (25% of Project)
 - Nakul Nandhakumar - 24% (MVP)
     - **Comments:** A great integrator,patient teacher, always helps his teammates both in an outside of class, really helpful when tackling issues with version control, great with GUI creation, hard worker
 - Vihan Jayaraman - 24%
