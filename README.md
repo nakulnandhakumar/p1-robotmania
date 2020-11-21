@@ -23,11 +23,13 @@
 - In class Ship, the enemy ships are created based on the specified amount, each one more unit longer than the other. Other information such as ship lengths and orientation are also initialized here and all of this information is added to a stack called shiplist
 - In the class BattleshipControl, the baord and ship information are received from the model classes and then a method uses the information from the stack shiplist and prints the enemy ships on the enemy board. As the player presses buttons to guess, a recursive method is run to keep checking for hits until the player wins or runs out of turns
 
-![](BattleshipDemoGIF.gif)
+![](BattleshipGIF.gif)
 
 #### **Connect Four (Two Player Game):** 
 - Try this UI version of Connect Four! Press buttons that coordinate to certain columns to "drop" your pieces. 
 - Play with a friend and compete to see who will make four in a row first!
+
+![](ConnectFourGIF.gif)
 
 #### **Hangbot:** 
 - A fan of hangman? Check out hangbot, a single player game that will test your guessing ability.
