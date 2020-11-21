@@ -35,6 +35,8 @@
 - A fan of hangman? Check out hangbot, a single player game that will test your guessing ability.
 - With a plethora of words and an engaging UI, you will be sure to enjoy this game!
 
+![](HangbotGIF.gif)
+
 #### **Calculators:** 
 - Are you tired of your phone's boring calculator? Since you said yes, take a look at our one-of-a-kind and user-friendly calculators!
 - With creative and ingenious M double-V C programming, you can experience the joy of a console or a user interface caluclator that you can freely switch between!
